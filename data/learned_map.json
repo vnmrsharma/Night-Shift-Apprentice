@@ -1,0 +1,5331 @@
+{
+ "version": "learned-1",
+ "n_cards_raw": 120,
+ "cards": [
+  {
+   "id": "LC-001",
+   "title": "Rule out somatic and basic-needs causes before blaming the disease",
+   "kind": "decision_rule",
+   "context": "Resident with a behaviour issue, where staff may be tempted to attribute it to Alzheimer's disease.",
+   "action": "First clear anything somatic or basic-need related (e.g. a sore thumb, wrong footwear, hunger) before interpreting the behaviour as the disease.",
+   "rationale": "About half of behaviour issues are triggered by health or body-related issues, so skipping this check misses the point most of the time.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not put everything on the back of the disease",
+    "The ~50% figure is the expert's recollection of internal findings, not a cited study"
+   ],
+   "escalation": [],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-08",
+    "KU-S13-16",
+    "KU-S13-20"
+   ],
+   "sessions": [
+    "S03",
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer",
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0072",
+     "span": "She's suffering in her feet. She's got edema. She's not wearing her compression stockings.",
+     "verified": true,
+     "unit_id": "KU-S03-08",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S13-T0335",
+     "span": "refusal from 'another observation' could be too much noise in the room, pain, etc. \u2014 causes that are internal to the resident or environmental.",
+     "verified": true,
+     "unit_id": "KU-S13-16",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0336",
+     "span": "it's missing also internal and environmental causes.",
+     "verified": true,
+     "unit_id": "KU-S13-16",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0354",
+     "span": "First, clear everything that could be somatic, that could be related to the body, or the basic needs of the body.",
+     "verified": true,
+     "unit_id": "KU-S13-20",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0354",
+     "span": "So if you don't rule that out first, then you're missing the point most of the time.",
+     "verified": true,
+     "unit_id": "KU-S13-20",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0354",
+     "span": "the [OPERATOR] method is body and mind in the sense that very often people with Alzheimer's when they have a behavior issue.",
+     "verified": true,
+     "unit_id": "KU-S13-20",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "checks",
+      "op": "not_contains",
+      "value": "pain"
+     }
+    ]
+   },
+   "corroboration": 2,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-002",
+   "title": "Write care-plan objectives as testable hypotheses with frequency and outcome",
+   "kind": "measurement",
+   "context": "Individual care plan built from information gathered before and at admission, e.g. resident likes music or stays in room and is low",
+   "action": "Set an objective with a frequency and an observable outcome (e.g. music 2-3 times a week; leaving room more, joining groups), monitor the effect on mood, socialisation and participation, and reassess the strategy if there is no effect",
+   "rationale": "Objectives are educated assumptions based on pre-admission and admission information, so they are tested rather than taken as given",
+   "exceptions": [],
+   "guardrails": [
+    "Treat objectives as assumptions to be tested, not fixed answers"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-07",
+    "KU-S13-08",
+    "KU-S13-09"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0285",
+     "span": "we set care objectives, and at a defined point there's an evaluation to see whether it's working or not",
+     "verified": true,
+     "unit_id": "KU-S13-07",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0290",
+     "span": "if someone likes music, the plan might say they take part in two music workshops a week, and we see whether it affects their mood",
+     "verified": true,
+     "unit_id": "KU-S13-08",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0291",
+     "span": "And if it doesn't, well, then we can reassess the strategy.",
+     "verified": true,
+     "unit_id": "KU-S13-08",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0291",
+     "span": "But it's an educated assumption, obviously, based on all the elements we will be gathering before they move in and as they move in.",
+     "verified": true,
+     "unit_id": "KU-S13-08",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0291",
+     "span": "monitor. and witness whether it has an impact on his mood or his socialization with others or participation in activities. And if it doesn't, well, then we can reassess the strategy.",
+     "verified": true,
+     "unit_id": "KU-S13-09",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-003",
+   "title": "Treat wandering as behaviour, separate from refusal of care",
+   "kind": "decision_rule",
+   "context": "When defining scope for non-drug dementia care, refusal and behavioural issues such as wandering get conflated.",
+   "action": "Differentiate refusal from behaviours such as wandering, and address behavioural issues as well as refusal.",
+   "rationale": "Refusal is only one part; wandering is not a refusal, yet it draws heavily on the home's resources and is a real pain point.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not categorise elopement as refusal of care",
+    "Do not apply the targeted strategy used for refusals",
+    "Refusal needs a different strategy from exit-seeking."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S05-02",
+    "KU-S13-17",
+    "KU-S13-18"
+   ],
+   "sessions": [
+    "S05",
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer",
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S05-T0125",
+     "span": "Refusal is only one part.",
+     "verified": true,
+     "unit_id": "KU-S05-02",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S05-T0125",
+     "span": "wondering is a behavior. And it's not a refusal, and yet that's something that. draws a lot on resources of the home.",
+     "verified": true,
+     "unit_id": "KU-S05-02",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S05-T0125",
+     "span": "If we if we want to be serious about this, we need to address behavior issues as well.",
+     "verified": true,
+     "unit_id": "KU-S05-02",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S13-T0345",
+     "span": "when they want to run away, it's because they're not integrated into the home \u2014 so the action is much broader: rework the resident's integration",
+     "verified": true,
+     "unit_id": "KU-S13-17",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0341",
+     "span": "I think it reflects a general sense of unease/distress. It's not a cause of refusal, anyway.",
+     "verified": true,
+     "unit_id": "KU-S13-17",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0346",
+     "span": "are very often people who are not sufficiently integrated into their home",
+     "verified": true,
+     "unit_id": "KU-S13-18",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "exit_seeking"
+     },
+     {
+      "field": "intervention",
+      "op": "neq",
+      "value": "integration_plan_review"
+     }
+    ]
+   },
+   "corroboration": 2,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-004",
+   "title": "KPI framework: three outcome KPIs plus two behaviour KPIs",
+   "kind": "measurement",
+   "context": "Defining which KPIs the dementia-care tool tracks and targets",
+   "action": "Track three health/outcome KPIs (antipsychotic medication use, weight loss, falls with major injury) and two behaviour KPIs (rejection of care/refusal, wandering). Consider frequency and intensity of the behaviours.",
+   "rationale": "Outcome KPIs are long-term; most features target the behaviour KPIs and their intensity.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not list more than two behaviour KPIs"
+   ],
+   "escalation": [],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S09-01",
+    "KU-S11-03",
+    "KU-S13-14"
+   ],
+   "sessions": [
+    "S09",
+    "S11",
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer",
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S09-T0137",
+     "span": "antipsychotic drug use, fall risk (falls), and weight loss; and the two behavioural ones",
+     "verified": true,
+     "unit_id": "KU-S09-01",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0137",
+     "span": "frequency of refusal\u2026 \u2026and frequency of wandering",
+     "verified": true,
+     "unit_id": "KU-S09-01",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S11-T0193",
+     "span": "There were 3, 3 health related and 2 behavior ones.",
+     "verified": true,
+     "unit_id": "KU-S11-03",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0194",
+     "span": "two behaviour KPIs: rejection of care (refusal) and wandering",
+     "verified": true,
+     "unit_id": "KU-S11-03",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S13-T0315",
+     "span": "Antipsychotic medication use \u2014 yes. Weight loss is a hugely important KPI in Alzheimer's because it tells us a lot.",
+     "verified": true,
+     "unit_id": "KU-S13-14",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0318",
+     "span": "Refusal \u2014 I agree. Sleep disorders too, and wandering too.",
+     "verified": true,
+     "unit_id": "KU-S13-14",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 3,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-005",
+   "title": "Expect psychosocial recording gaps; missing entries are not absence of events",
+   "kind": "decision_rule",
+   "context": "Reading care-record software for resident behaviour, refusals and social activities in the nursing home",
+   "action": "Treat healthcare data (injections, drugs, dressings) as near-complete (~100%), but expect gaps in social activities, behaviour changes and refusals. Do not read a missing entry as 'nothing happened'.",
+   "rationale": "General operator's focus is healthcare; the psychologist's method focuses on behaviour and social data. Turnover, day-only staff needing new software access, and low discipline add to the gaps.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not interpret missing psychosocial entries as absence of events",
+    "Do not infer success from the absence of entries"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S01-03",
+    "KU-S03-05",
+    "KU-S13-13"
+   ],
+   "sessions": [
+    "S01",
+    "S03",
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement",
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0007",
+     "span": "That's why we're lacking data on many things, because it's just not input it in the in the software.",
+     "verified": true,
+     "unit_id": "KU-S01-03",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S03-T0063",
+     "span": "But social activities, behavior, um\u2026 Changes, things like that. That would not necessarily be very strictly and systematically recorded.",
+     "verified": true,
+     "unit_id": "KU-S03-05",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0063",
+     "span": "Because it's not their main focus. It's ours, but it's not their main focus.",
+     "verified": true,
+     "unit_id": "KU-S03-05",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S13-T0309",
+     "span": "you don't know if nothing's written because they forgot, or because there was no improvement",
+     "verified": true,
+     "unit_id": "KU-S13-13",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0308",
+     "span": "they don't necessarily write anything when things go well or when there's a success",
+     "verified": true,
+     "unit_id": "KU-S13-13",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 3,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-006",
+   "title": "Record format depends on the topic: ticks, figures or narrative",
+   "kind": "process",
+   "context": "Frontline staff recording care events in the software",
+   "action": "Use yes/no tick boxes for tasks (drug given, drug taken, toileting done), figures for measurements such as weight, and qualitative notes for behaviour-related issues.",
+   "rationale": "The type of information determines the format; behaviour needs description, not a tick.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-03",
+    "KU-S03-04"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement",
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0050",
+     "span": "Did you give the drug? Yes, no. Did he take it? Yes, no.",
+     "verified": true,
+     "unit_id": "KU-S03-03",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0050",
+     "span": "weight monitoring. Then, obviously, it's just figures.",
+     "verified": true,
+     "unit_id": "KU-S03-03",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0050",
+     "span": "If if it was a behavior related issue, then it would be more. qualitative.",
+     "verified": true,
+     "unit_id": "KU-S03-03",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0050",
+     "span": "If if it was a behavior related issue, then it would be more. qualitative.",
+     "verified": true,
+     "unit_id": "KU-S03-04",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0050",
+     "span": "Then, obviously, it's just figures.",
+     "verified": true,
+     "unit_id": "KU-S03-04",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-007",
+   "title": "Document how a refusal was expressed, not just its type",
+   "kind": "decision_rule",
+   "context": "A resident refuses care (e.g. eating, bathing, meds) and staff record the incident; categorising only by type (refusal bucket) would lose information.",
+   "action": "Record how the refusal was expressed and experienced by the caregiver: what they saw, witnessed, observed and can write down (e.g. verbal decline vs throwing the plate).",
+   "rationale": "The way a refusal is expressed is central to the approach; losing it loses part of the method, and it is very useful information.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not reduce refusals to a generic 'refusal' bucket or to type alone"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-13",
+    "KU-S03-14"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0101",
+     "span": "not only the, the type of refusal, but also the way he was refused is very important to us.",
+     "verified": true,
+     "unit_id": "KU-S03-13",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0101",
+     "span": "I don't want to eat today is very different from throwing my plate in your face.",
+     "verified": true,
+     "unit_id": "KU-S03-13",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0101",
+     "span": "not only the, the type of refusal, but also the way he was refused is very important to us.",
+     "verified": true,
+     "unit_id": "KU-S03-14",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0101",
+     "span": "I don't want to eat today is very different from throwing my plate in your face.",
+     "verified": true,
+     "unit_id": "KU-S03-14",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-008",
+   "title": "Judge refusal strategies against baseline refusal frequency",
+   "kind": "measurement",
+   "context": "A resident refuses care and a non-drug strategy has been put in place for the refusal.",
+   "action": "Describe the refusal, put a strategy in place, then count refusals. Success is the refusal eliminated or fewer refusals than baseline. Count per day, week or month depending on how often it used to occur.",
+   "rationale": "Without drugs, the approach tracks how the difficulty evolves under the strategies. It is not a treatment and does not cure.",
+   "exceptions": [],
+   "guardrails": [
+    "Choose the time unit to match the usual frequency of the refusals"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-08",
+    "KU-S13-09"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0292",
+     "span": "Whether it works shows in the refusal being eliminated, or there being fewer refusals than at baseline, which is also considered a success.",
+     "verified": true,
+     "unit_id": "KU-S13-08",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0292",
+     "span": "we use strategies and see whether the behaviour stops or not.",
+     "verified": true,
+     "unit_id": "KU-S13-08",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0292",
+     "span": "Whether it works shows in the refusal being eliminated, or there being fewer refusals than at baseline, which is also considered a success.",
+     "verified": true,
+     "unit_id": "KU-S13-09",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0293",
+     "span": "If with the applied methods, we managed to reduce the number of refusals per day, or per week, or per month, depending on the frequency that they used to have.",
+     "verified": true,
+     "unit_id": "KU-S13-09",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-009",
+   "title": "In-house neuropsychologist's three-part role: residents, teams, families",
+   "kind": "process",
+   "context": "Role of the in-house neuropsychologist in a nursing home applying the method",
+   "action": "Support residents psychologically and run therapeutic workshops; help teams with difficulties and train them in Alzheimer's/dementia skills; support families in distress and ease communication with their relative.",
+   "rationale": "The role rests on three groups: residents, the team and the families.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-01",
+    "KU-S13-02"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0246",
+     "span": "With residents, the role is to provide psychological support and run therapeutic workshops.",
+     "verified": true,
+     "unit_id": "KU-S13-01",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0246",
+     "span": "With teams, it was helping them face difficulties and training them in Alzheimer's/dementia competencies.",
+     "verified": true,
+     "unit_id": "KU-S13-01",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0246",
+     "span": "there are three important elements: the residents, the team and the families.",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0246",
+     "span": "With residents, the role is to provide psychological support and run therapeutic workshops.",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-010",
+   "title": "Care records are entered later from memory, not in real time",
+   "kind": "decision_rule",
+   "context": "Care assistants do most hands-on work but have no portable device. Some nurses have laptops or tablets. Others use a fixed PC.",
+   "action": "Treat entries as written after a round or at shift end, from memory. Do not assume they were recorded when the event happened. Design any recording aid for fixed PCs unless portable devices are available.",
+   "rationale": "Staff go into rooms with training, equipment and knowledge of the care plan. They log what they did afterwards at the PC. The expert says it is not ideal but it works.",
+   "exceptions": [
+    "Some nurses have laptops or tablets",
+    "The expert is pushing for smartphones so staff can tick boxes as they work, but this is not the current practice"
+   ],
+   "guardrails": [
+    "Do not expect the project to get staff to start measuring new items; the expert thinks that is unrealistic",
+    "Entry time is an upper bound on when the event happened, not the event time",
+    "Do not assume the timestamp matches the period of the day in which the event happened",
+    "Check how timestamps are assigned in the live system before relying on them"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-02",
+    "KU-S03-14"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer",
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0026",
+     "span": "It would not be in real time",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0028",
+     "span": "then they would go and sit at that PC after they've worked with the 8 people.",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0046",
+     "span": "They have no portable device. Some, the nurses do. But the the assistant nurses they don't, and they are the ones doing most of the work.",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0018",
+     "span": "I don't think it's realistic.",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0106",
+     "span": "what's recorded was logged is the time at which the people have input the data in the software, not the time at which it happened.",
+     "verified": true,
+     "unit_id": "KU-S03-14",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0106",
+     "span": "the log would be at the time of recording, not at the time of occurrence of the event.",
+     "verified": true,
+     "unit_id": "KU-S03-14",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-011",
+   "title": "Team has psychologists, not psychiatrists; psychologists are not doctors",
+   "kind": "process",
+   "context": "Describing who provides psychological, non-drug dementia care in the operator's nursing homes, after the interviewer wrongly said psychiatrist.",
+   "action": "Treat the role as psychologist, not psychiatrist. Do not assume medical authority such as prescribing or diagnosis. Medical decisions need a physician.",
+   "rationale": "There are no psychiatrists in the environment, only one historically. Psychologists are not doctors.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not use 'psychiatrist' and 'psychologist' interchangeably",
+    "Do not describe psychologists as doctors or psychiatrists in tool design or job descriptions"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-01",
+    "KU-S12-04"
+   ],
+   "sessions": [
+    "S11",
+    "S12"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0184",
+     "span": "Psychiatrists are doctors. Psychologists aren't, but they deal with different things.",
+     "verified": true,
+     "unit_id": "KU-S11-01",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0186",
+     "span": "Psychiatrists prescribe drugs because they're doctors.",
+     "verified": true,
+     "unit_id": "KU-S11-01",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S12-T0229",
+     "span": "Psychologist. No, you said psychiatrist.",
+     "verified": true,
+     "unit_id": "KU-S12-04",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0231",
+     "span": "There was one historically.",
+     "verified": true,
+     "unit_id": "KU-S12-04",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0232",
+     "span": "There aren't any. Yes, not doctors. They're not doctors.",
+     "verified": true,
+     "unit_id": "KU-S12-04",
+     "session": "S12"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 2,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-012",
+   "title": "Record rich qualitative notes, not productivity counts",
+   "kind": "principle",
+   "context": "Documenting care in the resident record.",
+   "action": "Write qualitative notes on behaviour, cause, intervention given, and outcome. Do not count tasks done per time.",
+   "rationale": "Qualitative information is valuable even though it is not raw data for calculation. Productivity counts such as washes per 30 minutes are not what the team is after.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-08",
+    "KU-S14-04"
+   ],
+   "sessions": [
+    "S03",
+    "S14"
+   ],
+   "source_types": [
+    "Expert statement",
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0072",
+     "span": "we do have a lot of a lot of qualitative information",
+     "verified": true,
+     "unit_id": "KU-S03-08",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0072",
+     "span": "it's not a matter of, oh, I've done, you know, 8\u2026 8 cleaning in 30 minutes this morning",
+     "verified": true,
+     "unit_id": "KU-S03-08",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S14-T0369",
+     "span": "in dementia care every event is part of the care/therapy.",
+     "verified": true,
+     "unit_id": "KU-S14-04",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 2,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-013",
+   "title": "Rolling programme of short monthly or quarterly flash trainings",
+   "kind": "process",
+   "context": "Internal training plan in the nursing home to build the team's competence in dementia care.",
+   "action": "Run a short 'flash' training regularly (monthly or quarterly), given by the psychologist, coordinating nurse or coordinating physician, on topics such as behavioural disorders and eating disorders.",
+   "rationale": "The team gets a mini-training regularly, which builds competence in the care to provide.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-11",
+    "KU-S13-12"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0297",
+     "span": "every month \u2014 or rather every quarter \u2014 the psychologist, the coordinating nurse, or the coordinating physician gives a short 'flash' training",
+     "verified": true,
+     "unit_id": "KU-S13-11",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0297",
+     "span": "the team gets a mini-training regularly that builds their competence in the care to provide.",
+     "verified": true,
+     "unit_id": "KU-S13-11",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0298",
+     "span": "every month there's a quick training that is carried out by either the head doctor, the in-house doctor, the head nurse. or the psychologists.",
+     "verified": true,
+     "unit_id": "KU-S13-12",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0298",
+     "span": "Remind them of the basics on the disease. Explain some, you know, specific situations, etc.",
+     "verified": true,
+     "unit_id": "KU-S13-12",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-014",
+   "title": "Standardise the method for building plans, never the plan itself",
+   "kind": "process",
+   "context": "Designing personalised care plans for residents with dementia across a facility.",
+   "action": "Use a common methodology to build each plan, but do not fix one identical treatment for everyone; tailor each plan to the individual.",
+   "rationale": "Every patient is different, no two patients are alike, even within a common methodological approach.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not set one treatment that is the same for everyone"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-05"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0260",
+     "span": "Even with a common methodological approach, you shouldn't try to set one treatment that's the same for everyone.",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0260",
+     "span": "no two patients are alike",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0266",
+     "span": "it's an almost mandatory prerequisite. If you want a coherent plan afterwards, the care plan has to go through the initial assessment, the life-history collection, etc.",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0266",
+     "span": "It takes time \u2014 so yes, it's difficult.",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-015",
+   "title": "Role scope is clear; performance is judged qualitatively",
+   "kind": "measurement",
+   "context": "Interviewer claimed responsibilities are a hodgepodge and KPI ownership is non-existent; expert corrected this regarding nursing home staff roles and measurement.",
+   "action": "Treat each personnel type (nurses, assistant nurses, cleaning staff) as having specific, well-understood tasks and scope; assess how well work is done through qualitative information rather than data-driven KPIs.",
+   "rationale": "Not everyone does everything; each type of personnel knows what they are allowed to do, but measurement is qualitative, not data driven.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-05",
+    "KU-S03-09"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer",
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0055",
+     "span": "not being absent, showing up on time. and. doing the tasks. within the timeframe that is supposed to do it.",
+     "verified": true,
+     "unit_id": "KU-S03-05",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0075",
+     "span": "Each type of personnel has very specific tasks. Not everyone does everything.",
+     "verified": true,
+     "unit_id": "KU-S03-09",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0075",
+     "span": "But the way we measure it is not data driven, but qualitative information driven.",
+     "verified": true,
+     "unit_id": "KU-S03-09",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-016",
+   "title": "Track behaviours by persistence, frequency and acuteness",
+   "kind": "measurement",
+   "context": "A behavioural disorder is being managed without drugs through strategies.",
+   "action": "Check whether the behaviour continues to appear, whether it is more or less frequent, and whether it is more or less acute. Treat the behaviour stopping as the main sign the strategy works.",
+   "rationale": "Strategies target behavioural disorders and are judged by their effect on the behaviour.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-09",
+    "KU-S13-18"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0293",
+     "span": "Does the behavior continue to appear? Is it more frequent, less frequent, uh, less acute, more acute?",
+     "verified": true,
+     "unit_id": "KU-S13-09",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0292",
+     "span": "we use strategies and see whether the behaviour stops or not.",
+     "verified": true,
+     "unit_id": "KU-S13-09",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0351",
+     "span": "I'd noted something missing \u2014 for example frequency: is it habitual or not?",
+     "verified": true,
+     "unit_id": "KU-S13-18",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-017",
+   "title": "Measure progress with standardised scales on a regular basis",
+   "kind": "measurement",
+   "context": "Assessing whether a non-drug, CBT-based approach is producing progress in nursing home residents with dementia.",
+   "action": "Use standardised instruments such as the MMSE for cognition and the NPI for behavioural problems, and administer them regularly and repeatedly.",
+   "rationale": "Progress is measurable, but only meaningful if the testing is done on a regular basis. The approach has a scientific base (CBT), unlike something such as yoga.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not rely on one-off or occasional testing; it is not really meaningful."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S01-01"
+   ],
+   "sessions": [
+    "S01"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0001",
+     "span": "we do have a scientific base that is CBT",
+     "verified": true,
+     "unit_id": "KU-S01-01",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0001",
+     "span": "progress is measurable. You know, we have all kinds of tests like MMSE",
+     "verified": true,
+     "unit_id": "KU-S01-01",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0001",
+     "span": "You can measure it, but you have to do it on a regular basis for it to be really meaningful.",
+     "verified": true,
+     "unit_id": "KU-S01-01",
+     "session": "S01"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-018",
+   "title": "Do not expect originating homes' results from partial method adoption",
+   "kind": "decision_rule",
+   "context": "A site adopts only parts of the method (e.g. online training or software) rather than full training of all staff across the whole day.",
+   "action": "Do not expect or promise the same results as the originating homes; treat the outcome as a highly diluted version of the method.",
+   "rationale": "Effects come from applying 100% of the method, with 100% of staff trained, for 100% of the day; partial adoption cannot reproduce that.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not promise the originating homes' results to a site adopting only components.",
+    "Be careful when deciding what to measure at such sites."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S01-02"
+   ],
+   "sessions": [
+    "S01"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0002",
+     "span": "we don't expect to reach the same results as the ones we get.",
+     "verified": true,
+     "unit_id": "KU-S01-02",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0002",
+     "span": "It has to be a diluted, a highly diluted version of it.",
+     "verified": true,
+     "unit_id": "KU-S01-02",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0004",
+     "span": "they will never reach our level because they will only get a piece.",
+     "verified": true,
+     "unit_id": "KU-S01-02",
+     "session": "S01"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-019",
+   "title": "Set targets relative to each site's own baseline",
+   "kind": "measurement",
+   "context": "Measuring effectiveness at other sites that use the method only in part.",
+   "action": "Work out a formula that sets expected outcomes relative to the site's own baseline and its degree of adoption, rather than the originating homes' results.",
+   "rationale": "Outcomes will necessarily differ because those sites apply only a piece of what the originating homes use at every moment of the day.",
+   "exceptions": [],
+   "guardrails": [
+    "The formula is not yet defined; it still has to be worked out."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S01-02"
+   ],
+   "sessions": [
+    "S01"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0003",
+     "span": "It'll have to be a formula based on their own, based on anybody, any other use cases baseline.",
+     "verified": true,
+     "unit_id": "KU-S01-02",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0004",
+     "span": "So the outcome will necessarily be different.",
+     "verified": true,
+     "unit_id": "KU-S01-02",
+     "session": "S01"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-020",
+   "title": "Verify an indicator is actually recorded before relying on it",
+   "kind": "decision_rule",
+   "context": "Choosing an indicator to show progress within 3-6 months from the data catalogue (refusal, diet/hydration, sleep, activity engagement).",
+   "action": "Only rely on an indicator if staff measure it and enter it in the care software; progress must be measured, not just witnessed.",
+   "rationale": "Much of the information is currently not entered in the software, which creates data gaps.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not rely on informal observation or 'witnessing' progress as evidence",
+    "Do not choose an indicator whose data is not consistently recorded"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S01-03"
+   ],
+   "sessions": [
+    "S01"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0007",
+     "span": "provided people. measure it and record it. Um\u2026 because you can't just witness it. You have to measure it.",
+     "verified": true,
+     "unit_id": "KU-S01-03",
+     "session": "S01"
+    },
+    {
+     "turn_id": "S01-T0007",
+     "span": "a lot of it is actually not recorded in the software",
+     "verified": true,
+     "unit_id": "KU-S01-03",
+     "session": "S01"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-021",
+   "title": "A curative dementia drug would not solve loneliness in care",
+   "kind": "principle",
+   "context": "Discussion of a hypothetical drug that makes dementia disappear; the social dimension of life in care homes.",
+   "action": "Keep addressing solitude and the social side of life in care even if pharmacological treatment improves.",
+   "rationale": "Even a curative pill would not solve solitude.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S01-04"
+   ],
+   "sessions": [
+    "S01"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S01-T0010",
+     "span": "He won't solve solitude.",
+     "verified": true,
+     "unit_id": "KU-S01-04",
+     "session": "S01"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-022",
+   "title": "Five-patient sample too thin for refusal and engagement conclusions",
+   "kind": "principle",
+   "context": "Analysing refusal reduction and activity engagement with only about five patients",
+   "action": "Do not draw conclusions from this sample; seek more resident profiles or more context before treating results as insight",
+   "rationale": "Too single-layered; not enough data to drive a useful insight",
+   "exceptions": [],
+   "guardrails": [
+    "Do not treat insights from about five patients as meaningful"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S02-02"
+   ],
+   "sessions": [
+    "S02"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S02-T0012",
+     "span": "the current sample (5 patients) is too single-layered to draw a meaningful conclusion; we need more patients or more context",
+     "verified": true,
+     "unit_id": "KU-S02-02",
+     "session": "S02"
+    },
+    {
+     "turn_id": "S02-T0013",
+     "span": "not enough data to drive an insight that's like, okay, this is really useful",
+     "verified": true,
+     "unit_id": "KU-S02-02",
+     "session": "S02"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-023",
+   "title": "Facility-level insights used for resource allocation, not resident insight",
+   "kind": "process",
+   "context": "Sample too small at resident level; team looked at facility-level data instead",
+   "action": "Use facility-level insights mainly for resource allocation questions",
+   "rationale": "Facility-level data was explored but pertained to resource allocation rather than refusal or engagement",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S02-02"
+   ],
+   "sessions": [
+    "S02"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S02-T0013",
+     "span": "we went to look at some of the facility level insights, but that was more around the resource allocation",
+     "verified": true,
+     "unit_id": "KU-S02-02",
+     "session": "S02"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-024",
+   "title": "Provide daily pleasurable moments as ongoing natural antidepressant",
+   "kind": "principle",
+   "context": "Residents with low mood; antidepressant medication in place",
+   "action": "Provide pleasurable moments every day, ideally several times a day, so the resident has a stable sense of pleasure and rebuilds self-esteem. Do not stop medication overnight.",
+   "rationale": "Pleasure acts as a natural antidepressant. Regular repetition rebuilds self-esteem and shifts overall state of mind and eating.",
+   "exceptions": [],
+   "guardrails": [
+    "Not a one-off crisis intervention like injecting a drug",
+    "Do not stop antidepressant medication overnight"
+   ],
+   "escalation": [],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-01"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0015",
+     "span": "We use pleasure as a natural antidepressant. So we do away with the drug, but we don't stop it overnight.",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0015",
+     "span": "on a regular basis, i.e. every day, and ideally several times during the day.",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-025",
+   "title": "Frame the method as an ongoing process, not crisis response",
+   "kind": "principle",
+   "context": "Describing or wording the approach and its expected results",
+   "action": "Present it as an ongoing action producing results over time, like healthy food and exercise, not as a situation-action-result fix.",
+   "rationale": "Health comes from continuous practice. A single activity during a crisis does not solve it.",
+   "exceptions": [],
+   "guardrails": [
+    "Be careful with wording so it does not imply a quick fix"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-01"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0015",
+     "span": "it's not a situation, an action, a result. It's an ongoing action that produces the result over time.",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0015",
+     "span": "It's not like injecting a drug, you know, someone's. Having a crisis, you inject something and then solved.",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-026",
+   "title": "Measure repetition and fit of activities, not single outcomes",
+   "kind": "measurement",
+   "context": "Defining indicators (KPIs) for the non-drug approach",
+   "action": "Track how often residents engage in activities, the amount of social interaction, participation in outings, and whether activities match the person's psychological profile.",
+   "rationale": "Results come from repeated actions, so the metric is repetition of actions. It is measurable on paper, though unsure if currently measured.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-01"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0017",
+     "span": "the metric is repetition of actions. How often do people engage in. activities. How much social interaction do they have?",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0017",
+     "span": "Are the activities offered to that person matching their psychological profile?",
+     "verified": true,
+     "unit_id": "KU-S03-01",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-027",
+   "title": "Retry refused morning care later; supervisors learn via later PC entries",
+   "kind": "process",
+   "context": "A resident is scheduled for care, such as washing, and refuses in the morning. Each carer has an assigned list of residents.",
+   "action": "Retry the task later that morning or in the afternoon. Supervisors see what was done through the carer's later PC entry.",
+   "rationale": "Schedules allocate residents per carer. There is no clock-in/out and no physical visit log, so supervisors rely on the PC entries.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-02"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0042",
+     "span": "if that person refuses in the morning, you have to do it in the afternoon or later on in the in that morning",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0046",
+     "span": "Because they put it in the PC, but just later on, not right on the spot.",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0040",
+     "span": "No, no, we don't clock in and clock out.",
+     "verified": true,
+     "unit_id": "KU-S03-02",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "intervention",
+      "op": "eq",
+      "value": "no_action"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-028",
+   "title": "Read narrative notes, not just coded fields, when analysing behaviour",
+   "kind": "principle",
+   "context": "Analysing resident behaviour from the records",
+   "action": "Read the qualitative narrative, because it holds the context and likely trigger that tick boxes and coded fields miss.",
+   "rationale": "A note that a resident was distressed and repeatedly asking when her daughter was coming, because she knew a visit was due, says far more than 'diaper changed at 11'.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-03"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0050",
+     "span": "which is very different from, you know, a change of diaper at 11",
+     "verified": true,
+     "unit_id": "KU-S03-03",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-029",
+   "title": "Expert to supply job and task descriptions per staff category",
+   "kind": "process",
+   "context": "Discovery of existing frontline workflows by staff category.",
+   "action": "Provide job descriptions or task descriptions for each staff category.",
+   "rationale": "",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-04"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0052",
+     "span": "I could get you job descriptions or task descriptions.",
+     "verified": true,
+     "unit_id": "KU-S03-04",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-030",
+   "title": "Why staff recording is incomplete despite being mandatory",
+   "kind": "process",
+   "context": "Staff must record activities in the software, but recording is not always done",
+   "action": "Recognise the causes of incomplete recording: substantial staff turnover, day-only temporary staff who need new software access each time, and lack of discipline.",
+   "rationale": "Staff are not motivated to record; they have to, but it is not always done.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-05"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0061",
+     "span": "you have to create a new access to the software for them every time they come.",
+     "verified": true,
+     "unit_id": "KU-S03-05",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0057",
+     "span": "They're not motivated to do it. They have to do it. But. It's not always done.",
+     "verified": true,
+     "unit_id": "KU-S03-05",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-031",
+   "title": "Prioritise individual cognitive care plans for new admissions and reviews",
+   "kind": "process",
+   "context": "Individual cognitive care plans are incomplete across homes. Staff must review existing plans and write new ones for admissions, and this is extra work specific to this method.",
+   "action": "Push staff to complete the plans. Cover new admissions and scheduled reviews of existing plans.",
+   "rationale": "It is a lot of extra work that no other setting does, so staff need constant pushing and some homes are behind.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-06"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0066",
+     "span": "they have to\u2026 you know, review them for the existing ones. They have to do the new ones. When they come in.",
+     "verified": true,
+     "unit_id": "KU-S03-06",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0066",
+     "span": "We have to push them, because it's not done anywhere else.",
+     "verified": true,
+     "unit_id": "KU-S03-06",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-032",
+   "title": "MMSE is the only consistently recorded cognitive measure",
+   "kind": "measurement",
+   "context": "Records vary widely between residents, teams and homes. Activity information is often filled in by the psychologist or activity staff with little supervision.",
+   "action": "Rely on the MMSE as the consistent baseline indicator. Treat other record content as variable.",
+   "rationale": "The MMSE is always present, while other information is inconsistent and care plans are not 100% complete.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not assume activity or care plan information is complete or comparable across homes."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-06"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0066",
+     "span": "something that would be really consistent is the MMSE.",
+     "verified": true,
+     "unit_id": "KU-S03-06",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0064",
+     "span": "The amount of information is very inconsistent from one person to another.",
+     "verified": true,
+     "unit_id": "KU-S03-06",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-033",
+   "title": "Non-blaming multidisciplinary review when a resident's status changes",
+   "kind": "process",
+   "context": "A resident shows a marked change or deterioration; the interviewer asked whose fault it is or who should act.",
+   "action": "Flag the case for a multidisciplinary staff meeting. Ask whether there is more behavioural trouble, more depression or something else. Study the case, find the reasons, and put strategies in place to resolve the situation or slow the process.",
+   "rationale": "It is no one's fault: with a disease, it can evolve.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not assign blame for deterioration"
+   ],
+   "escalation": [
+    "Multidisciplinary staff meeting"
+   ],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-07"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0068",
+     "span": "it's no one's fault. Because with a disease it can evolve.",
+     "verified": true,
+     "unit_id": "KU-S03-07",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0068",
+     "span": "multidisciplinary staff meeting to discuss the case.",
+     "verified": true,
+     "unit_id": "KU-S03-07",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0068",
+     "span": "find the reasons why this is happening, and then they would put in place various strategies to.",
+     "verified": true,
+     "unit_id": "KU-S03-07",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-034",
+   "title": "Case discussion runs on staff observation, not numeric data",
+   "kind": "principle",
+   "context": "Daily staff meetings discuss observed cases. The interviewer questioned what is discussed when there is no data.",
+   "action": "Discuss what staff have observed, without requiring numeric data.",
+   "rationale": "The operation is not data driven; the expert says she has stated this from the beginning.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-07"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0070",
+     "span": "They don't need data to discuss what they've observed.",
+     "verified": true,
+     "unit_id": "KU-S03-07",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0070",
+     "span": "Our operation is not data driven.",
+     "verified": true,
+     "unit_id": "KU-S03-07",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-035",
+   "title": "Adapt diet texture and note the effect on eating",
+   "kind": "decision_rule",
+   "context": "Resident has eating difficulties.",
+   "action": "Move to a mixed or grated texture, then record whether she eats alone and enjoys it.",
+   "rationale": "After the change to grated food, the resident eats on her own and seems to enjoy it, which the expert called very valuable information.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-08"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0072",
+     "span": "Since we moved her diet to a mixed one, you know, um\u2026 Grated, grated food, and she eats on her own, and seems to be enjoying it.",
+     "verified": true,
+     "unit_id": "KU-S03-08",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-036",
+   "title": "Escalate severe repeated refusals to daily staff meeting",
+   "kind": "escalation_rule",
+   "context": "A resident repeatedly refuses a care event such as drinking or eating (more than 3 times a day) and the situation is severe enough.",
+   "action": "Bring the case to the staff meeting, where cases are discussed every day, so the team can identify the cause together.",
+   "rationale": "Identification of the issue is a collective responsibility; the team runs a 360 inquiry to find where the problem comes from.",
+   "exceptions": [],
+   "guardrails": [
+    "Escalate only if severe enough"
+   ],
+   "escalation": [
+    "Daily staff meeting (multidisciplinary team)"
+   ],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-10"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0077",
+     "span": "if it's severe enough, it would be brought up in a staff meeting, and they\u2026 they discuss various cases every day.",
+     "verified": true,
+     "unit_id": "KU-S03-10",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0079",
+     "span": "the identification of the issue will be a collective responsibility. Because they will do a 360 inquiry to identify where the problem comes from.",
+     "verified": true,
+     "unit_id": "KU-S03-10",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "occurrences_today",
+      "op": "gte",
+      "value": 3
+     },
+     {
+      "field": "escalate_to",
+      "op": "neq",
+      "value": "team_meeting"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-037",
+   "title": "Assign problem owner by cause: care staff or psychologist",
+   "kind": "decision_rule",
+   "context": "After the team inquiry has found the root of a problem; any situation is linked to a physical problem, a neuropsychological problem, or both.",
+   "action": "If physical, care staff deal with it (e.g. change treatment, new mattress). If behavioural with no physical cause, the psychologist devises strategies, possibly with activity staff.",
+   "rationale": "The person who solves it depends on the nature of the problem; it may be a combination of psychological and physical.",
+   "exceptions": [
+    "Combination of physical and psychological causes: both sides are involved"
+   ],
+   "guardrails": [
+    "Check for physical causes before treating it as purely behavioural"
+   ],
+   "escalation": [
+    "Psychologist (with activity staff) for non-physical behavioural causes"
+   ],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-10"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0079",
+     "span": "if it's a physical issue, then it's the care staff that will deal with it. If it's a psychological one. Then the it would be the psychologist with maybe the activity people.",
+     "verified": true,
+     "unit_id": "KU-S03-10",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0079",
+     "span": "the one in charge for solving the problem. will depend on the nature of the problem.",
+     "verified": true,
+     "unit_id": "KU-S03-10",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-038",
+   "title": "Revise cognitive care plan only for durable change",
+   "kind": "decision_rule",
+   "context": "A problem has been handled by care staff or psychologist solutions.",
+   "action": "Revise the cognitive care plan only if the change in the person's situation is durable; otherwise deliver the solution without revising it.",
+   "rationale": "Solutions do not necessarily require revising the cognitive care plan.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-10"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0079",
+     "span": "It doesn't necessarily necessitate to revise the cognitive care plan. Unless it's a durable evolution in the situation of that person, in which case, yes, we readapt.",
+     "verified": true,
+     "unit_id": "KU-S03-10",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-039",
+   "title": "Swap carer when rapport isn't working today",
+   "kind": "decision_rule",
+   "context": "Resident refuses a task with the assigned carer; refusal has reasons such as the carer's mood or rapport not working that day.",
+   "action": "A colleague with whom it works better takes over and does the task.",
+   "rationale": "A refusal has reasons; the team always looks for strategies around it, and the colleague usually gets no refusal.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-12"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0093",
+     "span": "a refusal has reasons. We always. find strategies to go around the refusal",
+     "verified": true,
+     "unit_id": "KU-S03-12",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0093",
+     "span": "Today, it's just not working between that resident and me, but it's going to work with my colleague.",
+     "verified": true,
+     "unit_id": "KU-S03-12",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "occurrences_today",
+      "op": "gte",
+      "value": 2
+     },
+     {
+      "field": "intervention",
+      "op": "neq",
+      "value": "swap_carer_or_call_psychologist"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-040",
+   "title": "Call psychologist to calm refusal; log their action",
+   "kind": "escalation_rule",
+   "context": "Carer meets a refusal and cannot continue the care alone.",
+   "action": "Call the psychologist, who calms the situation so the carer can carry on and complete the task. Record the psychologist's action as information.",
+   "rationale": "The psychologist's action is important information in itself.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [
+    "psychologist"
+   ],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-12"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0097",
+     "span": "I called in a psychologist. for help. She came in. She helped, you know, calm down the situation",
+     "verified": true,
+     "unit_id": "KU-S03-12",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0097",
+     "span": "the action of the psychologist is important in itself as a piece of information.",
+     "verified": true,
+     "unit_id": "KU-S03-12",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-041",
+   "title": "Keep psychologist free in mornings to support team",
+   "kind": "process",
+   "context": "Morning shift care routines in which refusals may occur.",
+   "action": "The psychologist has no assigned tasks in the morning so she is available to the rest of the team.",
+   "rationale": "Availability allows quick support when carers meet refusals.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-12"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0099",
+     "span": "the psychologist in the morning. She has no assigned tasks. Since she's just available for the rest of the team.",
+     "verified": true,
+     "unit_id": "KU-S03-12",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-042",
+   "title": "Investigate recurring refusals even when mild",
+   "kind": "decision_rule",
+   "context": "A resident refuses care. Severity is considered, but how often the refusal recurs is also considered. Occasional refusal may be fine; daily refusal is not.",
+   "action": "Look into refusals that happen daily or repeatedly, even when each one is mild. Treat repetition itself as an indicator.",
+   "rationale": "Repetition is an indicator for the team, separate from how severe each event is.",
+   "exceptions": [
+    "Refusal that happens only every now and then may be fine."
+   ],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S03-15"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0110",
+     "span": "If it's every now and then. then maybe it's fine if it's every day. then that's something we would look into.",
+     "verified": true,
+     "unit_id": "KU-S03-15",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0110",
+     "span": "So it could be mild, but if it's repetitive. That's an indicator for us as well.",
+     "verified": true,
+     "unit_id": "KU-S03-15",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "pattern",
+      "op": "eq",
+      "value": "habitual"
+     },
+     {
+      "field": "intervention",
+      "op": "eq",
+      "value": "no_action"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-043",
+   "title": "Assess each resident individually against an overall dependency profile",
+   "kind": "process",
+   "context": "Reviewing residents' care needs and behaviours, including refusals.",
+   "action": "Keep an overall dependency profile for each resident, and record and manage each case individually.",
+   "rationale": "Care is handled case by case. Severity is looked at, and recurrence is looked at alongside it.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-15"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0110",
+     "span": "you have an overall profile of level of dependency. And then each case is written, is looked after individually",
+     "verified": true,
+     "unit_id": "KU-S03-15",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-044",
+   "title": "Qualify every refusal to find its underlying cause",
+   "kind": "principle",
+   "context": "A person with dementia refuses something, for example an activity. Refusal can come from many different reasons such as tiredness, hunger or depression.",
+   "action": "Qualify the refusal, meaning work out what lies behind it, before deciding how to respond. Treat it as a question about an unmet need.",
+   "rationale": "Refusal can originate from a very wide variety of reasons, so it touches all aspects of care. Understanding the cause is how you get into the method of solving it.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S03-16"
+   ],
+   "sessions": [
+    "S03"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S03-T0113",
+     "span": "That's why it's very important to qualify the refusal.",
+     "verified": true,
+     "unit_id": "KU-S03-16",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0113",
+     "span": "it could be that that person is tired, or she's hungry, or she's depressed",
+     "verified": true,
+     "unit_id": "KU-S03-16",
+     "session": "S03"
+    },
+    {
+     "turn_id": "S03-T0113",
+     "span": "that's what will allow you to get into the methods of understanding the refusal and solving it.",
+     "verified": true,
+     "unit_id": "KU-S03-16",
+     "session": "S03"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-045",
+   "title": "Records are historical context, not a tracking or management tool",
+   "kind": "process",
+   "context": "Care information is recorded in the software, but it is not tracked or used for management.",
+   "action": "Use records as historical data on a person to understand what has been going on with them.",
+   "rationale": "We record things but we don't track things; it is not used as a management tool.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S04-02"
+   ],
+   "sessions": [
+    "S04"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S04-T0115",
+     "span": "we record things. But we don't track things.",
+     "verified": true,
+     "unit_id": "KU-S04-02",
+     "session": "S04"
+    },
+    {
+     "turn_id": "S04-T0115",
+     "span": "Rather. historical data on someone so that we can understand what's been going on with that person.",
+     "verified": true,
+     "unit_id": "KU-S04-02",
+     "session": "S04"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-046",
+   "title": "Critical events are acted on, but without a systematic protocol",
+   "kind": "process",
+   "context": "A critical event appears in a person's record.",
+   "action": "Staff act on it case by case; no software-prompted 'this happened, do this' protocol exists.",
+   "rationale": "Action is not systematic and is not prompted by the software.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S04-02"
+   ],
+   "sessions": [
+    "S04"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S04-T0115",
+     "span": "if there's something critical, then obviously we'll act upon it.",
+     "verified": true,
+     "unit_id": "KU-S04-02",
+     "session": "S04"
+    },
+    {
+     "turn_id": "S04-T0115",
+     "span": "There's not a set set protocol, for this has happened.",
+     "verified": true,
+     "unit_id": "KU-S04-02",
+     "session": "S04"
+    },
+    {
+     "turn_id": "S04-T0115",
+     "span": "it's not prompted by the software.",
+     "verified": true,
+     "unit_id": "KU-S04-02",
+     "session": "S04"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-047",
+   "title": "Don't claim retained dependency from facility averages given resident turnover",
+   "kind": "decision_rule",
+   "context": "Facility-level average dependency score is considered as evidence of a trend (e.g., maintained or decreased over five years). Average length of stay is only 2-3 years, so residents change.",
+   "action": "Do not claim dependency was retained or improved over time from facility averages. Use the average only to say dependency in the homes is very high, much higher than in most homes, while length of stay is similar to normal nursing homes.",
+   "rationale": "The average mixes different people; the vast majority change within about 3 years, so it is not the same population.",
+   "exceptions": [
+    "Some residents do stay 5 or 10 years, but they are a minority"
+   ],
+   "guardrails": [
+    "Do not treat a facility average as a within-resident trajectory",
+    "Dependency scores on the national scale need conversion before sharing; MMSE is international"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S05-01"
+   ],
+   "sessions": [
+    "S05"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S05-T0124",
+     "span": "your average dependency level will be a mix of different people. So you can't say this is the same population that is staying with us for 5 years, 10 years.",
+     "verified": true,
+     "unit_id": "KU-S05-01",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S05-T0124",
+     "span": "the level of dependency in our homes. is very high. It's much higher than in most homes",
+     "verified": true,
+     "unit_id": "KU-S05-01",
+     "session": "S05"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-048",
+   "title": "Facility dependency averages can be shared but need scale conversion",
+   "kind": "process",
+   "context": "Sharing facility-level average dependency externally.",
+   "action": "Share the average dependency level but convert it from the national scale into a comparable measure; MMSE is already international.",
+   "rationale": "The dependency score is on a national scale, whereas MMSE is international.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S05-01"
+   ],
+   "sessions": [
+    "S05"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S05-T0122",
+     "span": "we can share the average dependency level. It would be on the national [COUNTRY_A] scale.",
+     "verified": true,
+     "unit_id": "KU-S05-01",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S05-T0122",
+     "span": "although we do use Mmse, which is international.",
+     "verified": true,
+     "unit_id": "KU-S05-01",
+     "session": "S05"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-049",
+   "title": "Broaden indicators and KPIs rather than stressing live data",
+   "kind": "principle",
+   "context": "Presenting resident data and metrics to users, where a live feed is considered against historical data.",
+   "action": "Widen the range of indicators and KPIs over time. Treat this as at least as useful as offering a live feed.",
+   "rationale": "In real life resident patterns change little compared with historical data, so a live feed adds limited new information.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S05-03"
+   ],
+   "sessions": [
+    "S05"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S05-T0127",
+     "span": "Whereas I know that in real life, not much will change.",
+     "verified": true,
+     "unit_id": "KU-S05-03",
+     "session": "S05"
+    },
+    {
+     "turn_id": "S05-T0128",
+     "span": "have a wider range of indicators and KPIs and. That's at least as useful as giving a light feed, live feed.",
+     "verified": true,
+     "unit_id": "KU-S05-03",
+     "session": "S05"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-050",
+   "title": "Digital guidance must be accessible live at point of care",
+   "kind": "principle",
+   "context": "Digitising the CBT-informed method as software or a tool for frontline nursing-home staff",
+   "action": "Design the tool so staff can open it live, wherever they are working, and use its resources there.",
+   "rationale": "Staff need the guidance in the moment, not as separate training.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S07-01"
+   ],
+   "sessions": [
+    "S07"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S07-T0134",
+     "span": "People would have to access the software live where they are.",
+     "verified": true,
+     "unit_id": "KU-S07-01",
+     "session": "S07"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-051",
+   "title": "Optionally add staff logging of refusal reasons as KPI",
+   "kind": "measurement",
+   "context": "First audit showed a very low rate of logged refusal reasons by staff.",
+   "action": "Consider adding staff's ability to log refusal reasons as an additional KPI, so better recording can improve.",
+   "rationale": "First audit showed very low rate of logged reasons, so recording has room to improve.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S09-01"
+   ],
+   "sessions": [
+    "S09"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S09-T0137",
+     "span": "We could add staff's ability to log refusal reasons",
+     "verified": true,
+     "unit_id": "KU-S09-01",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0137",
+     "span": "our first audit showed a very low rate of logged reasons",
+     "verified": true,
+     "unit_id": "KU-S09-01",
+     "session": "S09"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-052",
+   "title": "Software for homes must be in staff's local language",
+   "kind": "decision_rule",
+   "context": "Introducing software or tools (e.g., KPI/logging tools) in nursing homes where staff work in French.",
+   "action": "Deliver the software and guidance in the local working language (French); English-only is not acceptable, English alongside French is not enough on its own.",
+   "rationale": "If it is to be used by the homes, it has to be in the local language.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not deploy English-only tools in the homes."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S09-02"
+   ],
+   "sessions": [
+    "S09"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S09-T0138",
+     "span": "this all has, will have to be done in French, yeah? Your software for the homes. It can't be in English.",
+     "verified": true,
+     "unit_id": "KU-S09-02",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0140",
+     "span": "if you want it to be used by our homes, it has to be in the local language.",
+     "verified": true,
+     "unit_id": "KU-S09-02",
+     "session": "S09"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-053",
+   "title": "Care method must be lived on the ground, not just charted",
+   "kind": "principle",
+   "context": "Comparing their dementia care method with other operators' standardised methods and flowcharts",
+   "action": "Base the care method on what is actually done with residents on the ground, not on how it should be done in theory",
+   "rationale": "Most other operators and experts are scholars describing how it should be done; flowcharts are not on the ground caring for people",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S09-03"
+   ],
+   "sessions": [
+    "S09"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S09-T0141",
+     "span": "we're one of the very few operators who are actually living their methods.",
+     "verified": true,
+     "unit_id": "KU-S09-03",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0141",
+     "span": "And your flowcharts are not on the ground, you know, caring for the people.",
+     "verified": true,
+     "unit_id": "KU-S09-03",
+     "session": "S09"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-054",
+   "title": "Use improved external quality grade as evidence when advising client homes",
+   "kind": "process",
+   "context": "Homes are assessed by external quality-control assessors who come in and give a grade. The operator advises client homes on its method.",
+   "action": "Tell client homes that using the method will improve their quality assessment grade, and use this as a selling point.",
+   "rationale": "The operator says it has proven that applying its method automatically improves the grade in the external rating, which helps with selling.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S09-04"
+   ],
+   "sessions": [
+    "S09"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S09-T0143",
+     "span": "we have external quality control assessment as well. And they come in, they give you a grade, et cetera.",
+     "verified": true,
+     "unit_id": "KU-S09-04",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0143",
+     "span": "proven that by applying the [OPERATOR] method you automatically improve your grade at that rating",
+     "verified": true,
+     "unit_id": "KU-S09-04",
+     "session": "S09"
+    },
+    {
+     "turn_id": "S09-T0144",
+     "span": "if you use our method, you will improve your quality assessment grade",
+     "verified": true,
+     "unit_id": "KU-S09-04",
+     "session": "S09"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-055",
+   "title": "Route treatment-change concerns via nurses to coordinating physician",
+   "kind": "escalation_rule",
+   "context": "Nurses notice something about a resident's treatment or behaviour that may need a treatment adjustment; treating GPs and specialists are external and hard to reach.",
+   "action": "Nurses raise it with the coordinating physician, who speaks to the treating doctors about adjusting the treatment.",
+   "rationale": "The coordinating physician coordinates all doctors around a resident and gives opinions on treatments and behaviours, but is not a treating doctor.",
+   "exceptions": [],
+   "guardrails": [
+    "The coordinating physician is not allowed to treat patients",
+    "Do not expect direct access to residents' own GPs or specialists"
+   ],
+   "escalation": [
+    "Coordinating physician, who then contacts the treating doctors"
+   ],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-02"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0156",
+     "span": "If they see something that is. Uh, you know, uh, brought up by the nurses, then they would speak to the doctors and say, well, maybe we need to adjust the treatment",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0156",
+     "span": "But they are not treating doctors. It's not their role. They're not allowed to.",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "intervention",
+      "op": "eq",
+      "value": "give_prn_medication"
+     },
+     {
+      "field": "escalate_to",
+      "op": "eq",
+      "value": "none"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-056",
+   "title": "Coordinating physician role: supervises care and hygiene, does not treat",
+   "kind": "process",
+   "context": "Each nursing home has one employed coordinating physician, sometimes part-time.",
+   "action": "Use the coordinating physician for supervising care provision and hygiene, coordinating the doctors around a resident, and giving opinions on treatments and behaviours.",
+   "rationale": "Employed by the home but officially not a treating doctor; the role is coordination.",
+   "exceptions": [
+    "Can be a treating doctor in some cases, but that is officially another part of their job"
+   ],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-02"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0147",
+     "span": "one employed doctor per home, and he's sometimes part-time.",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0156",
+     "span": "They're there as coordinating all the other doctors that are working around a specific person",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-057",
+   "title": "External doctors and therapists have limited accessibility",
+   "kind": "process",
+   "context": "Residents keep their own GPs and specialists, who visit them in the home as if at home; physiotherapists are usually subcontractors.",
+   "action": "Expect GPs and specialists to be hard to reach; physiotherapists are easier to reach if input is needed.",
+   "rationale": "They are not employees and the home has no authority over them; doctor shortages mean some residents have no GP.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-02"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0151",
+     "span": "we have no authority over these people",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0149",
+     "span": "Physiotherapists, they're usually not employed either, they're subcontractors. But they're easier to have access to.",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0153",
+     "span": "It's as if people were still living at home. And instead of visiting them at home, they visit them in the nursing home.",
+     "verified": true,
+     "unit_id": "KU-S10-02",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-058",
+   "title": "Cascaded training dilutes method; rely on committed local champion",
+   "kind": "principle",
+   "context": "Method is taught through train-the-trainer to an overseas public hospital dementia unit, with limited budget and time.",
+   "action": "Accept a diluted version when training is cascaded, and rely on a committed local lead such as the head nurse to push quality as high as possible.",
+   "rationale": "Result was satisfactory despite dilution through two levels, helped by the team's keenness and the head nurse's commitment.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-04"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0164",
+     "span": "It was a diluted version of [THE METHOD] passed to a local team that passed it to a local hospital.",
+     "verified": true,
+     "unit_id": "KU-S10-04",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0168",
+     "span": "especially the head nurse of that project. She really tried her best to reach as high a level as possible",
+     "verified": true,
+     "unit_id": "KU-S10-04",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-059",
+   "title": "Hospital dementia unit set up from need and political signalling",
+   "kind": "process",
+   "context": "A public hospital struggling with dementia patients created a dedicated geriatric/dementia branch and adopted the method.",
+   "action": "Trained the unit on and off for about a year via local consultants.",
+   "rationale": "They had difficulty with such patients and needed something; partnering also showed local government they were providing a solution.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-04"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0167",
+     "span": "They were having difficulties dealing with such patients.",
+     "verified": true,
+     "unit_id": "KU-S10-04",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0168",
+     "span": "they had to show the local government they were dealing with it",
+     "verified": true,
+     "unit_id": "KU-S10-04",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-060",
+   "title": "Assess psychologist, doctor access and training before exporting the method",
+   "kind": "process",
+   "context": "Adapting the psychologist-led dementia care method to a new market (overseas) where professional roles and training differ.",
+   "action": "Check up front whether psychologists exist, whether operators can reach residents' doctors, and what baseline dementia-care training staff have. Where there are no psychologists, use social workers as proxies and teach staff everything from a low base.",
+   "rationale": "In that market there are no psychologists, residents lack GPs and hospitals handle medical care without operator access, and nursing and medical schools give no formal dementia training.",
+   "exceptions": [],
+   "guardrails": [
+    "Social workers are a far cry from psychologists, only the closest available substitute"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S10-06"
+   ],
+   "sessions": [
+    "S10"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S10-T0177",
+     "span": "So we had to rely on proxies like social workers. That are a far cry from being psychologists, but that's the closest thing we could get.",
+     "verified": true,
+     "unit_id": "KU-S10-06",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0180",
+     "span": "You don't have access to the doctors. Even as an operator, you can't talk to your resident's doctor.",
+     "verified": true,
+     "unit_id": "KU-S10-06",
+     "session": "S10"
+    },
+    {
+     "turn_id": "S10-T0183",
+     "span": "So we have to teach them everything. So we're starting from a very low base.",
+     "verified": true,
+     "unit_id": "KU-S10-06",
+     "session": "S10"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-061",
+   "title": "Method relies mostly on psychologists, not psychiatrists",
+   "kind": "process",
+   "context": "Who is involved in the non-drug approach to dementia care.",
+   "action": "Involve psychologists as the main professional; a psychiatrist was historically involved but is not the main one now.",
+   "rationale": "Psychologists deal with different things than psychiatrists, with a lot of overlap.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-01"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0187",
+     "span": "we use mostly psychologists, though historically a psychiatrist was involved.",
+     "verified": true,
+     "unit_id": "KU-S11-01",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-062",
+   "title": "Sleep is not a behaviour KPI",
+   "kind": "principle",
+   "context": "Someone lists sleep time or sleep quality as a third behaviour KPI",
+   "action": "Do not count sleep as a behaviour KPI; the behaviour KPIs are only refusal of care and wandering.",
+   "rationale": "Expert: sleep is not a behaviour.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-03"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0191",
+     "span": "That's not a behavior.",
+     "verified": true,
+     "unit_id": "KU-S11-03",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-063",
+   "title": "Include a non-adopting comparison home when evaluating the method",
+   "kind": "decision_rule",
+   "context": "Planning a visit to an overseas partner site that applies the expert's method, to understand and evaluate it.",
+   "action": "Also visit a home there that does not apply the method, so the two can be compared.",
+   "rationale": "What is seen at the partner site is only part of the method, since the site is far from full implementation. A comparator gives a better basis for judging.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not treat the partner site as a complete picture of the method."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-04"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0196",
+     "span": "Ideally you should also visit a home there that is not applying our method, to be able to compare.",
+     "verified": true,
+     "unit_id": "KU-S11-04",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0196",
+     "span": "what you'll see at the overseas site is only part of what we do at home",
+     "verified": true,
+     "unit_id": "KU-S11-04",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-064",
+   "title": "Don't expect frontline buy-in after founders left",
+   "kind": "principle",
+   "context": "Nursing homes now run by the parent group after the founders left; teams have turned over and newcomers were trained in the method.",
+   "action": "Do not count on frontline staff feeling part of the project. Expect them to carry out what they are asked to do, not to own it.",
+   "rationale": "The founders' spirit disappeared with team turnover. Newcomers don't feel empowered by the method or hold a legacy to keep, so they apply what they're told.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-05"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0197",
+     "span": "Don't expect our people on the ground in our homes to be involved in this project.",
+     "verified": true,
+     "unit_id": "KU-S11-05",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0198",
+     "span": "They're applying what they're told to do.",
+     "verified": true,
+     "unit_id": "KU-S11-05",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-065",
+   "title": "Frontline staff have practical intelligence",
+   "kind": "principle",
+   "context": "Thinking about how to involve frontline care staff in changes.",
+   "action": "Treat frontline staff as holders of practical knowledge about daily work.",
+   "rationale": "Expert calls this their 'practical intelligence'.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-05"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0201",
+     "span": "They have what I call the practical intelligence.",
+     "verified": true,
+     "unit_id": "KU-S11-05",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-066",
+   "title": "Train non-psychologists with formal modules plus field immersion",
+   "kind": "process",
+   "context": "Bringing a non-psychologist (e.g. a translator) to master the method in a market with no psychologists; closest profession is social workers.",
+   "action": "Combine formal training (translating courses and documents, online training with the method's neuropsychologist, 2-3 weeks of formal training) with two weeks of field immersion in nursing homes as a trainee: activities, staff meetings, workshops, staff interviews, resident interaction, living in a facility 24/7.",
+   "rationale": "She had formal training and could see how it was applied in the field; immersion brings her as far as possible without being a psychologist.",
+   "exceptions": [],
+   "guardrails": [
+    "Immersion is as an observing trainee, not in a nurse or psychologist role"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-06"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0204",
+     "span": "she came to [COUNTRY_A] for two or three weeks and followed the same training we gave to one of our main consultants in that market.",
+     "verified": true,
+     "unit_id": "KU-S11-06",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0207",
+     "span": "she also spent two weeks in our nursing homes being trained in the field.",
+     "verified": true,
+     "unit_id": "KU-S11-06",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0210",
+     "span": "She was immersed in what we do.",
+     "verified": true,
+     "unit_id": "KU-S11-06",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-067",
+   "title": "Respect role boundaries: some tasks only psychologists can do",
+   "kind": "principle",
+   "context": "A non-psychologist has mastered the method very well through training and immersion.",
+   "action": "Keep psychologist-only tasks with psychologists, even when the trained non-psychologist is highly knowledgeable.",
+   "rationale": "Psychologists are psychologists, and some things only they can do.",
+   "exceptions": [],
+   "guardrails": [
+    "Training a non-psychologist does not replace psychologist work"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-06"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0218",
+     "span": "psychologists are psychologists, and some things only psychologists can do.",
+     "verified": true,
+     "unit_id": "KU-S11-06",
+     "session": "S11"
+    },
+    {
+     "turn_id": "S11-T0215",
+     "span": "bringing her as far as she can go without being a psychologist",
+     "verified": true,
+     "unit_id": "KU-S11-06",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-068",
+   "title": "Originator held quarterly meetings with all psychologists until recently",
+   "kind": "process",
+   "context": "Supervision of psychologists applying the method",
+   "action": "The method's originator held quarterly meetings with all the psychologists. This was the practice until recently.",
+   "rationale": "",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S11-07"
+   ],
+   "sessions": [
+    "S11"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S11-T0219",
+     "span": "Until recently, the method's originator held quarterly meetings with all the psychologists.",
+     "verified": true,
+     "unit_id": "KU-S11-07",
+     "session": "S11"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-069",
+   "title": "Use distant overseas sites as a stress test of adaptability",
+   "kind": "principle",
+   "context": "Judging the method when it is applied in a home outside the operator's own, such as an overseas site far from direct-partner practice.",
+   "action": "Treat partial success in a distant setting as encouraging evidence that the method is compatible and adaptable. Do not expect it to match direct-partner homes.",
+   "rationale": "It is the lowest version of the method applied to a home that is not theirs, so working even to some extent shows compatibility and adaptability, like a phone that must work in every country.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S12-01"
+   ],
+   "sessions": [
+    "S12"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S12-T0221",
+     "span": "It's probably the lowest version you could experience of applying [THE METHOD] to a home that is not ours.",
+     "verified": true,
+     "unit_id": "KU-S12-01",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0224",
+     "span": "you know, it's encouraging.",
+     "verified": true,
+     "unit_id": "KU-S12-01",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0225",
+     "span": "That's why it's a stress test of compatibility and adaptability \u2014 like a phone that must work in every country.",
+     "verified": true,
+     "unit_id": "KU-S12-01",
+     "session": "S12"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-070",
+   "title": "Trained non-clinician consultant: expert within limits of training",
+   "kind": "principle",
+   "context": "Assessing the competence of a non-clinician consultant trained by the team for dementia care in the local market.",
+   "action": "Treat her as an expert at the level the team could bring her, while recognising she still lacks a lot of knowledge.",
+   "rationale": "She is probably much better than the vast majority of people in the local market when it comes to dementia care.",
+   "exceptions": [],
+   "guardrails": [
+    "She still lacks a lot of knowledge; do not treat her as fully expert."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S12-02"
+   ],
+   "sessions": [
+    "S12"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S12-T0226",
+     "span": "she's an expert, to the level we could bring her. She still lacks a lot of knowledge",
+     "verified": true,
+     "unit_id": "KU-S12-02",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0226",
+     "span": "she's probably much better than the vast majority of people in that market when it comes to dementia care",
+     "verified": true,
+     "unit_id": "KU-S12-02",
+     "session": "S12"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-071",
+   "title": "Neuropsychologist trains teams and runs cross-home psychologist meetings",
+   "kind": "process",
+   "context": "Organising work with the care teams and psychologists across the nursing homes, where teams have changed.",
+   "action": "Have the method's neuropsychologist organise it. He trains the teams and runs a regular cross-home meeting for all the psychologists.",
+   "rationale": "He knows the teams better than the speaker does, and the teams have changed.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S12-03"
+   ],
+   "sessions": [
+    "S12"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S12-T0227",
+     "span": "he knows them better than I do. The teams have changed, and he trains them.",
+     "verified": true,
+     "unit_id": "KU-S12-03",
+     "session": "S12"
+    },
+    {
+     "turn_id": "S12-T0227",
+     "span": "He also runs a regular cross-home meeting for all the psychologists in the various homes",
+     "verified": true,
+     "unit_id": "KU-S12-03",
+     "session": "S12"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-072",
+   "title": "Method director guarantees the approach in homes and spreads it externally",
+   "kind": "process",
+   "context": "Organisation of the method's clinical leadership",
+   "action": "The operational and scientific director guarantees the approach in the operator's homes and disseminates it to other facilities and to home care.",
+   "rationale": "",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-01"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0244",
+     "span": "guarantor of the approach in our homes, and disseminating it to other facilities and also to home care.",
+     "verified": true,
+     "unit_id": "KU-S13-01",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-073",
+   "title": "Support staff through difficulties and on-the-job dementia training",
+   "kind": "process",
+   "context": "Psychologist working with the care team in the home",
+   "action": "Help staff face difficulties and train them on the job, regularly refreshing their knowledge of Alzheimer's and dementia",
+   "rationale": "Staff competence in dementia is part of the psychologist's core role",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-02"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0246",
+     "span": "helping them face difficulties and training them in Alzheimer's/dementia competencies",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0247",
+     "span": "not only help them, but also train them on the job",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-074",
+   "title": "Support families with groups and smooth family-home relations",
+   "kind": "process",
+   "context": "Relatives of residents living in the home",
+   "action": "Support families in their distress, facilitate communication with their loved one, run regular group sessions, keep family-home relations smooth",
+   "rationale": "Families are the third pillar of the psychologist's role",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-02"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0246",
+     "span": "supporting them in their distress and facilitating communication with their loved one",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0247",
+     "span": "make sure that the the relations between the family and and the home were as smooth as possible",
+     "verified": true,
+     "unit_id": "KU-S13-02",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-075",
+   "title": "Build CBT expertise through mentorship and learning from trial and error",
+   "kind": "principle",
+   "context": "Developing expertise in CBT-based non-drug dementia care after initial university training, with no further formal CBT courses.",
+   "action": "Learn from mentorship by the method's originator and from trial and error with residents, drawing on both successes and errors.",
+   "rationale": "Expertise comes mostly from mentorship and on-the-ground experience, not from further formal training.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-03"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0248",
+     "span": "My expertise comes mostly from being mentored by the method's originator",
+     "verified": true,
+     "unit_id": "KU-S13-03",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0248",
+     "span": "you learn from your successes and your errors with the residents",
+     "verified": true,
+     "unit_id": "KU-S13-03",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-076",
+   "title": "Frame CBT-informed dementia care as quality of life, not cure",
+   "kind": "principle",
+   "context": "Describing the aim of CBT-informed, non-drug care for people with dementia, including when designing a tool to track its effectiveness.",
+   "action": "Frame the aim as a supportive human, physical and social environment plus cognitive stimulation, giving the most comfortable and peaceful life possible. Do not frame it as curing the disease or recovering cognition, and do not use the word 'treatment'.",
+   "rationale": "The disease is not curable, so no significant cognitive improvement is expected. Cognitive impairment does not necessarily lead to behavioural problems, so behaviour management is only one part of the aim.",
+   "exceptions": [
+    "Where behavioural disorders are present, 'improving symptoms' is a valid aim."
+   ],
+   "guardrails": [
+    "Do not present cognitive recovery as the outcome.",
+    "Do not reduce the aim to behaviour management only."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-04"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0254",
+     "span": "fundamentally, CBT here is about offering an environment that brings quality of life and slows the disease",
+     "verified": true,
+     "unit_id": "KU-S13-04",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0254",
+     "span": "the disease cannot be cured; we won't see significant improvement in, for example, cognition",
+     "verified": true,
+     "unit_id": "KU-S13-04",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0255",
+     "span": "the idea is not to cure people, but to provide the the most. comfortable and peaceful life as much as possible",
+     "verified": true,
+     "unit_id": "KU-S13-04",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-077",
+   "title": "Symptom improvement applies only when behavioural disorders exist",
+   "kind": "decision_rule",
+   "context": "Deciding whether 'improving symptoms' is the right goal for a resident.",
+   "action": "Use symptom improvement as a goal only when behavioural disorders are present. Otherwise the goal is a supportive environment, which is not really measured.",
+   "rationale": "Cognitive impairments do not necessarily lead to behaviour issues, and behaviour is just one part of the disease.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not equate the method's aim with behavioural symptom control alone."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-04"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0254",
+     "span": "'Improving symptoms' applies when there are behavioural disorders, but fundamentally the method's aim is to provide a supportive environment",
+     "verified": true,
+     "unit_id": "KU-S13-04",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0255",
+     "span": "they don't necessarily lead to behavior issues",
+     "verified": true,
+     "unit_id": "KU-S13-04",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-078",
+   "title": "Priority ranking: must-haves versus hardest-to-achieve problems",
+   "kind": "principle",
+   "context": "Prioritising the six problem sets for dementia care in nursing homes.",
+   "action": "Treat tracking effectiveness, personalised plans for everyone, and continuous staff training as indispensable. Expect inconsistent intervention performance and inconsistent frontline delivery to be hardest to achieve.",
+   "rationale": "The hardest ones depend on teams' initial training and the number of professionals, which differ in every facility.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-05"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0270",
+     "span": "The most difficult are points 3 and 5, because they depend on the teams' initial training and the number of professionals",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0272",
+     "span": "The indispensable ones: 1, 2 and 4.",
+     "verified": true,
+     "unit_id": "KU-S13-05",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-079",
+   "title": "Hold one-month integration review after admission and adjust plan",
+   "kind": "process",
+   "context": "A new resident has been admitted; the initial care plan was built from pre-admission information (life history, neuropsychological profile, abilities).",
+   "action": "At one month, run a new assessment of how the person has integrated (orientation, socialisation, weight/eating, sleep) and adjust the initial care plan and approach as needed.",
+   "rationale": "Shows whether the initial plan works and whether symptoms improved; the plan is usually adjusted anyway.",
+   "exceptions": [],
+   "guardrails": [
+    "Done as a multidisciplinary team, with relatives and the resident where able"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-07"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0285",
+     "span": "an integration review after one month, which shows how the person is integrating and whether symptoms have improved",
+     "verified": true,
+     "unit_id": "KU-S13-07",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0286",
+     "span": "But most of the time we adjust it anyway, because we do collect a lot a lot of information before they move in",
+     "verified": true,
+     "unit_id": "KU-S13-07",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0289",
+     "span": "And that's done as a multidisciplinary team. And in collaboration with the relatives or the resident himself or herself",
+     "verified": true,
+     "unit_id": "KU-S13-07",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "intervention",
+      "op": "eq",
+      "value": "no_action"
+     },
+     {
+      "field": "pattern",
+      "op": "eq",
+      "value": "new"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-080",
+   "title": "Keep core care principles and methodology identical across facilities",
+   "kind": "principle",
+   "context": "Comparing or generalising care across nursing homes, where results and style naturally differ because of many variables.",
+   "action": "Make sure each facility has the core principles active: cognitive stimulation, the approach to families, a CBT approach to behavioural disorders and genuine therapeutic activities. Accept that each home has its own personality.",
+   "rationale": "What can be replicated is how each facility brings the essential principles to life, not identical results or identical ways of working.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not expect identical results between facilities",
+    "Check that the principles are alive, not that scripts are copied"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-10"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0294",
+     "span": "What matters for generalizing is that in every facility our care principles are active",
+     "verified": true,
+     "unit_id": "KU-S13-10",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0294",
+     "span": "for behavioural disorders, the CBT approach; for cognitive stimulation, genuine therapeutic activities",
+     "verified": true,
+     "unit_id": "KU-S13-10",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-081",
+   "title": "Allow flexible activity formats if the technical guide and rationale are followed",
+   "kind": "decision_rule",
+   "context": "A facility runs a therapeutic activity such as a music workshop in its own way.",
+   "action": "Accept any format (listening to music, playing instruments) as long as it follows the technical guide and aims at multi-area brain stimulation. Do not prescribe a single way to run it.",
+   "rationale": "What matters is the underlying scientific approach, not how it is applied on the ground. Staff must understand why they do things.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not impose one only way to run a workshop",
+    "Staff must understand the rationale behind the activity"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": true,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-10"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0295",
+     "span": "As long as you do that, it's fine, whichever shape it takes.",
+     "verified": true,
+     "unit_id": "KU-S13-10",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0295",
+     "span": "But they have to understand why they do things.",
+     "verified": true,
+     "unit_id": "KU-S13-10",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-082",
+   "title": "Psychologist attends daily handovers to explain behaviours and the disease",
+   "kind": "process",
+   "context": "Daily handovers between teams in the nursing home, where staff need to understand deviant behaviours in people with dementia.",
+   "action": "Have the psychologist present at handovers to explain certain deviant behaviours and re-explain the disease, as informal ongoing training.",
+   "rationale": "Keeps team competence up through ongoing, informal training and explains specific situations in terms of the disease.",
+   "exceptions": [
+    "The psychologist is present at handovers 'most of the time', not always."
+   ],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-11"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0297",
+     "span": "the psychologist is present at every daily handover, and it's he or she who explains certain deviant behaviours and re-explains the disease",
+     "verified": true,
+     "unit_id": "KU-S13-11",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0298",
+     "span": "it's an opportunity for him or her to do some informal training. Remind them of the basics on the disease.",
+     "verified": true,
+     "unit_id": "KU-S13-11",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-083",
+   "title": "Use short repeatable videos to supplement hard-to-attend mini-trainings",
+   "kind": "process",
+   "context": "Monthly mini-trainings are poorly attended because carers cannot leave the floor (staff missing, or a resident needing more care), and trying to train everyone is exhausting.",
+   "action": "Consider short videos that staff can watch often to replicate the mini-trainings alongside live sessions.",
+   "rationale": "Taking carers off the floor for an afternoon leaves fewer carers on the floor, so it is hard to get everyone trained.",
+   "exceptions": [],
+   "guardrails": [
+    "Uncertain whether staff would actually use the videos"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-12"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0303",
+     "span": "it could take the form of, say, short videos to watch often.",
+     "verified": true,
+     "unit_id": "KU-S13-12",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0303",
+     "span": "So these mini-trainings are often poorly attended, and trying to train everyone quickly becomes exhausting.",
+     "verified": true,
+     "unit_id": "KU-S13-12",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0304",
+     "span": "Put a question mark on, will they really use them?",
+     "verified": true,
+     "unit_id": "KU-S13-12",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-084",
+   "title": "Poor handover note quality undermines plan follow-up and effectiveness assessment",
+   "kind": "principle",
+   "context": "Following the personalised care plan and assessing therapy effectiveness depend on daily handover notes written by care assistants.",
+   "action": "Improve the richness of care assistants' daily handover notes, including recording of improvements.",
+   "rationale": "Notes are often poor, limited or missing in the software, so it is hard to synthesise a success and information sharing in the team suffers.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-13"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0306",
+     "span": "the main difficulty is the quality of handover notes, especially from care assistants",
+     "verified": true,
+     "unit_id": "KU-S13-13",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-085",
+   "title": "Add apathy and depression measures to effectiveness KPIs",
+   "kind": "decision_rule",
+   "context": "Evaluating effectiveness of the non-drug method in Alzheimer's care with a KPI set (antipsychotic use, weight loss, falls, refusal, sleep, wandering).",
+   "action": "Add level of apathy and level of depression as KPIs alongside the behavioural indicators.",
+   "rationale": "People with Alzheimer's are nearly all depressed; the method aims to be a natural antidepressant. Apathy is often not addressed by homes and is the entry point to decline and later behavioural issues.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-14"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0318",
+     "span": "Fundamentally our aim is to be a natural antidepressant, so we could add depression and apathy.",
+     "verified": true,
+     "unit_id": "KU-S13-14",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0321",
+     "span": "apathy is something usually nursing homes don't deal with, and is the entry point into. to disease and further down the line behavior issues.",
+     "verified": true,
+     "unit_id": "KU-S13-14",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-086",
+   "title": "Do not use serious-injury falls as an effectiveness indicator",
+   "kind": "decision_rule",
+   "context": "Choosing KPIs to judge whether the method works; falls with serious injury were proposed.",
+   "action": "Do not treat falls with serious injury as a real indicator; interpret falls cautiously.",
+   "rationale": "Falls depend on many factors; residents who walk or wander more may actually fall less.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not penalise mobility or wandering when reading fall figures."
+   ],
+   "escalation": [],
+   "safety_critical": true,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-14"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0315",
+     "span": "falls with serious injury \u2014 I don't really see the point, because falls depend on many things; if they walk/wander more, they may actually fall less",
+     "verified": true,
+     "unit_id": "KU-S13-14",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-087",
+   "title": "Use a collegial personalised care plan meeting, not a dyad",
+   "kind": "process",
+   "context": "Coordination between psychologist and physician on a resident's care; interviewer assumed a standard one-on-one meeting.",
+   "action": "Hold a specific personalised care plan meeting that centralises all resident information and sets objectives. Participants: physician, psychologist, sometimes the director, a nurse, a care assistant, sometimes the family. The psychologist records the objectives in the care plan.",
+   "rationale": "The care plan belongs to the whole team, not only the physician. Care is continuous, and the plan is revised in later multidisciplinary meetings.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not describe this as a dedicated psychologist-physician meeting"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-15"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0325",
+     "span": "there's a specific meeting: the personalized care plan meeting. That's where we centralize all the resident's information and set the objectives",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0325",
+     "span": "It's a collegial meeting with the physician, the psychologist, sometimes the director, a nurse, a care assistant, and sometimes even the family.",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0327",
+     "span": "the care plan is the whole team's, not necessarily the physician's",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-088",
+   "title": "Optional monthly psychologist\u2013coordinating physician behaviour check-in",
+   "kind": "process",
+   "context": "Some homes add a psychologist-physician check-in on behavioural difficulties alongside the care plan meetings.",
+   "action": "Hold a monthly check-in with the coordinating physician to review behavioural difficulties and see what is working and what is not.",
+   "rationale": "Gives a regular review of the behavioural approach, but it is not required by the method.",
+   "exceptions": [
+    "Not an obligation of the method"
+   ],
+   "guardrails": [
+    "Do not let it replace the multidisciplinary team meetings"
+   ],
+   "escalation": [
+    "coordinating physician"
+   ],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": true
+   },
+   "units": [
+    "KU-S13-15"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0327",
+     "span": "in one facility we held a monthly check-in with the coordinating physician to review where we were on behavioural difficulties and see what was working and what wasn't",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0327",
+     "span": "that's not a requirement of the method",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-089",
+   "title": "Say 'personalised care plan', never 'treatment'",
+   "kind": "principle",
+   "context": "Documentation and wording about the plan for a resident.",
+   "action": "Call it a personalised care plan.",
+   "rationale": "'Treatment' is the wrong word; it is not a treatment.",
+   "exceptions": [],
+   "guardrails": [
+    "Avoid the word 'treatment' for the care plan"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-15"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0330",
+     "span": "it's a personalized care plan. That's what we call it.",
+     "verified": true,
+     "unit_id": "KU-S13-15",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-090",
+   "title": "Refusal during care points to staff interaction, not the approach",
+   "kind": "principle",
+   "context": "Resident refuses during routine care such as washing, feeding or medication, and the refusal type is being labelled.",
+   "action": "Review how staff approached the care and the staff\u2013resident interaction first. Do not label it refusal of the CBT intervention.",
+   "rationale": "Refusals arise because the CBT approach is not being applied properly. The approach does not generate refusal; the interaction does.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not describe the refusal as caused by the CBT intervention itself."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-16"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0335",
+     "span": "there are refusals during washing and so on \u2014 but that's because they're not using the CBT approach, which is normally the right method.",
+     "verified": true,
+     "unit_id": "KU-S13-16",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0336",
+     "span": "it's not the CBT in itself, uh, that is generating refusal, but it's the staff interaction with the residents.",
+     "verified": true,
+     "unit_id": "KU-S13-16",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": {
+    "severity": "warn",
+    "all": [
+     {
+      "field": "incident_type",
+      "op": "eq",
+      "value": "refusal_of_care"
+     },
+     {
+      "field": "intervention",
+      "op": "eq",
+      "value": "no_action"
+     }
+    ]
+   },
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-091",
+   "title": "Expect elopement among newcomers; it fades with time",
+   "kind": "principle",
+   "context": "Newly admitted residents who are disoriented and do not know where they are or why they are there.",
+   "action": "Anticipate running-away attempts in the early period after arrival and read them as disorientation and difficulty adapting.",
+   "rationale": "Residents generally want to run away on arrival, then it fades somewhat as they settle.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": true,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-17"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert correction of interviewer"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S13-T0343",
+     "span": "Generally they want to run away on arrival, and then it fades somewhat.",
+     "verified": true,
+     "unit_id": "KU-S13-17",
+     "session": "S13"
+    },
+    {
+     "turn_id": "S13-T0343",
+     "span": "they're completely disoriented and don't know where they are",
+     "verified": true,
+     "unit_id": "KU-S13-17",
+     "session": "S13"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-092",
+   "title": "Prefer long-tenured, experienced staff as interview informants",
+   "kind": "decision_rule",
+   "context": "Choosing which staff to interview about dementia care practice in nursing homes.",
+   "action": "Prioritise experienced staff who know the homes well, such as a long-serving head nurse or an activity coordinator who is an art therapist with dementia-specific training.",
+   "rationale": "Long-tenured staff know the homes and residents well and give more useful information.",
+   "exceptions": [],
+   "guardrails": [
+    "Newly hired psychologists are less useful informants."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-21"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [],
+   "evidence_status": "summary-only",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-093",
+   "title": "Keep practitioner interviews to 30 minutes or less",
+   "kind": "process",
+   "context": "Scheduling interviews with care staff during working hours.",
+   "action": "Keep each session short, at most 30 minutes.",
+   "rationale": "Staff cannot be kept off the floor for long.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not take staff away from the floor for extended periods."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S13-21"
+   ],
+   "sessions": [
+    "S13"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [],
+   "evidence_status": "summary-only",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-094",
+   "title": "Document practice to evidence care for quality inspections",
+   "kind": "process",
+   "context": "Regular inspections by the national health quality authority grade nursing homes on proof of what the home does.",
+   "action": "Document practice so there is plenty of evidence of the care approach to show inspectors.",
+   "rationale": "Quality control is proof-based; more evidence gives a better grade. Fewer shortfalls means less time spent on corrective actions, which helps the bottom line.",
+   "exceptions": [],
+   "guardrails": [],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S14-03"
+   ],
+   "sessions": [
+    "S14"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S14-T0359",
+     "span": "Quality control is proof based.",
+     "verified": true,
+     "unit_id": "KU-S14-03",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0359",
+     "span": "And the more evidence you can show, the better your grade will be.",
+     "verified": true,
+     "unit_id": "KU-S14-03",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0359",
+     "span": "If if you can provide a lot more evidence of what you do. It really helps you in the assessment.",
+     "verified": true,
+     "unit_id": "KU-S14-03",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-095",
+   "title": "Recording aid is used only if it eases frontline work",
+   "kind": "principle",
+   "context": "Adding a recording tool for care aides when current EHR entries are often left empty and staff have no incentive tied to documentation.",
+   "action": "Treat uptake as an open question: build the tool so it makes frontline work faster and better, and test with frontline staff whether it increases recording before scaling.",
+   "rationale": "Staff get no bonus for better documentation or for saving the enterprise money, so they only engage if the tool makes their job easier.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not assume a new tool will increase recording",
+    "Do not make staff feel micromanaged or audited"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S14-04"
+   ],
+   "sessions": [
+    "S14"
+   ],
+   "source_types": [
+    "Joint discussion"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S14-T0364",
+     "span": "much of it is not recorded \u2014 it may be empty.",
+     "verified": true,
+     "unit_id": "KU-S14-04",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0366",
+     "span": "if it makes the frontline people really engage and makes their life better and help them to do their job faster",
+     "verified": true,
+     "unit_id": "KU-S14-04",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0368",
+     "span": "You don't get a bonus for doing a really better job than other people.",
+     "verified": true,
+     "unit_id": "KU-S14-04",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-096",
+   "title": "Keep specialist dementia care dedicated; don't mix in non-dementia residents",
+   "kind": "principle",
+   "context": "Admission and population policy for a specialist dementia nursing home, including pressure to raise occupancy by admitting residents without dementia or without severe dementia.",
+   "action": "Keep the setting dedicated to people with dementia and do not mix them with non-demented residents.",
+   "rationale": "Compared to a drug that works for one disease: it is designed for that condition, and people without it do not need it. Families choosing a home may not see this, because a place that 'looks nice' says nothing about the quality of care delivered.",
+   "exceptions": [],
+   "guardrails": [
+    "Do not use occupancy gains alone to justify mixing populations. He acknowledges that admitting less-impaired residents did raise occupancy, possibly only temporarily."
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S14-05"
+   ],
+   "sessions": [
+    "S14"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S14-T0373",
+     "span": "You don't mix our population with non-demented people.",
+     "verified": true,
+     "unit_id": "KU-S14-05",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0375",
+     "span": "it's a dedicated, it's like, as if saying, oh, this drug works for this disease",
+     "verified": true,
+     "unit_id": "KU-S14-05",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-097",
+   "title": "Show prototypes to frontline staff only when seeking their opinion",
+   "kind": "decision_rule",
+   "context": "Deciding whether to show frontline staff the prototype (e.g. end-of-day recording feature) or explain the project to them",
+   "action": "Show the prototype only if you want their opinion; use their limited time to get the information needed rather than explaining the whole project",
+   "rationale": "Explaining the whole project takes too long, it is too complicated for them at this stage, and they cannot be kept off the floor for long",
+   "exceptions": [
+    "Do not show it merely as a reward for their time"
+   ],
+   "guardrails": [
+    "Don't spend staff time on full project explanations"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S14-06"
+   ],
+   "sessions": [
+    "S14"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S14-T0378",
+     "span": "It would take too much time explaining, and I'd rather you focus on the interview and get what you want out of it",
+     "verified": true,
+     "unit_id": "KU-S14-06",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0378",
+     "span": "you can't keep them off the field for too long",
+     "verified": true,
+     "unit_id": "KU-S14-06",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0380",
+     "span": "if you want their opinion on it, then yes. But if it's just to show them as a reward for their time, don't bother.",
+     "verified": true,
+     "unit_id": "KU-S14-06",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  },
+  {
+   "id": "LC-098",
+   "title": "Design prototypes for PC, not smartphone, to match staff environment",
+   "kind": "decision_rule",
+   "context": "Building or showing a prototype app to frontline care staff who work only from PCs and have no smartphones",
+   "action": "Make the prototype look like the real PC-based work environment, not a phone app",
+   "rationale": "Staff do not have smartphones and have resisted moving to them for years, so a phone-style design would not look like their real work environment",
+   "exceptions": [],
+   "guardrails": [
+    "Don't make the prototype look like it is from a phone"
+   ],
+   "escalation": [],
+   "safety_critical": false,
+   "cbt": {
+    "formulation": false,
+    "targeted_action": false,
+    "measures_response": false
+   },
+   "units": [
+    "KU-S14-06"
+   ],
+   "sessions": [
+    "S14"
+   ],
+   "source_types": [
+    "Expert statement"
+   ],
+   "evidence": [
+    {
+     "turn_id": "S14-T0380",
+     "span": "they do not have smartphones. They only work from, they only work from a PC.",
+     "verified": true,
+     "unit_id": "KU-S14-06",
+     "session": "S14"
+    },
+    {
+     "turn_id": "S14-T0380",
+     "span": "if you want to make it look as if it's the real work environment, don't make it look like it's from a phone.",
+     "verified": true,
+     "unit_id": "KU-S14-06",
+     "session": "S14"
+    }
+   ],
+   "evidence_status": "verbatim-verified",
+   "proposed_predicate": null,
+   "corroboration": 1,
+   "status": "transcript-learned (unreviewed)",
+   "contradictions": []
+  }
+ ],
+ "agenda": [
+  {
+   "card": "LC-001",
+   "title": "Rule out somatic and basic-needs causes before blaming the disease",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 3,
+   "score": 8.399999999999999,
+   "ask": "When would you NOT: First clear anything somatic or basic-need related (e.g. a sore thumb, wrong footwear, hun?"
+  },
+  {
+   "card": "LC-024",
+   "title": "Provide daily pleasurable moments as ongoing natural antidepressant",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 3,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Provide pleasurable moments every day, ideally several times a day, so the resident has a ?"
+  },
+  {
+   "card": "LC-035",
+   "title": "Adapt diet texture and note the effect on eating",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Move to a mixed or grated texture, then record whether she eats alone and enjoys it.?"
+  },
+  {
+   "card": "LC-038",
+   "title": "Revise cognitive care plan only for durable change",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Revise the cognitive care plan only if the change in the person's situation is durable; ot?"
+  },
+  {
+   "card": "LC-039",
+   "title": "Swap carer when rapport isn't working today",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: A colleague with whom it works better takes over and does the task.?"
+  },
+  {
+   "card": "LC-085",
+   "title": "Add apathy and depression measures to effectiveness KPIs",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Add level of apathy and level of depression as KPIs alongside the behavioural indicators.?"
+  },
+  {
+   "card": "LC-086",
+   "title": "Do not use serious-injury falls as an effectiveness indicator",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 3,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Do not treat falls with serious injury as a real indicator; interpret falls cautiously.?"
+  },
+  {
+   "card": "LC-005",
+   "title": "Expect psychosocial recording gaps; missing entries are not absence of events",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 6.4,
+   "ask": "When would you NOT: Treat healthcare data (injections, drugs, dressings) as near-complete (~100%), but expect ?"
+  },
+  {
+   "card": "LC-003",
+   "title": "Treat wandering as behaviour, separate from refusal of care",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 5.6,
+   "ask": "When would you NOT: Differentiate refusal from behaviours such as wandering, and address behavioural issues as?"
+  },
+  {
+   "card": "LC-007",
+   "title": "Document how a refusal was expressed, not just its type",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 4.8,
+   "ask": "When would you NOT: Record how the refusal was expressed and experienced by the caregiver: what they saw, witn?"
+  },
+  {
+   "card": "LC-018",
+   "title": "Do not expect originating homes' results from partial method adoption",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 4.8,
+   "ask": "When would you NOT: Do not expect or promise the same results as the originating homes; treat the outcome as a?"
+  },
+  {
+   "card": "LC-020",
+   "title": "Verify an indicator is actually recorded before relying on it",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 4.8,
+   "ask": "When would you NOT: Only rely on an indicator if staff measure it and enter it in the care software; progress ?"
+  }
+ ]
+}

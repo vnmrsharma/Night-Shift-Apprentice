@@ -1,0 +1,90 @@
+{
+ "merged_cards": 98,
+ "raw_cards": 120,
+ "by_kind": {
+  "decision_rule": 22,
+  "measurement": 10,
+  "process": 35,
+  "principle": 28,
+  "escalation_rule": 3
+ },
+ "verbatim_verified": 96,
+ "safety_critical": 7,
+ "with_guardrails": 46,
+ "with_exceptions": 9,
+ "with_escalation": 6,
+ "corroborated_2plus_sessions": 6,
+ "with_proposed_predicate": 9,
+ "contradictions": 0,
+ "cbt_formulation": 15,
+ "cbt_targeted_action": 17,
+ "cbt_measures_response": 23,
+ "cbt_all_three": 1,
+ "agenda": [
+  {
+   "card": "LC-001",
+   "title": "Rule out somatic and basic-needs causes before blaming the disease",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 3,
+   "score": 8.399999999999999,
+   "ask": "When would you NOT: First clear anything somatic or basic-need related (e.g. a sore thumb, wrong footwear, hun?"
+  },
+  {
+   "card": "LC-024",
+   "title": "Provide daily pleasurable moments as ongoing natural antidepressant",
+   "missing": [
+    "exceptions",
+    "escalation"
+   ],
+   "risk": 3,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Provide pleasurable moments every day, ideally several times a day, so the resident has a ?"
+  },
+  {
+   "card": "LC-035",
+   "title": "Adapt diet texture and note the effect on eating",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Move to a mixed or grated texture, then record whether she eats alone and enjoys it.?"
+  },
+  {
+   "card": "LC-038",
+   "title": "Revise cognitive care plan only for durable change",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: Revise the cognitive care plan only if the change in the person's situation is durable; ot?"
+  },
+  {
+   "card": "LC-039",
+   "title": "Swap carer when rapport isn't working today",
+   "missing": [
+    "exceptions",
+    "guardrails",
+    "escalation"
+   ],
+   "risk": 2,
+   "score": 7.199999999999999,
+   "ask": "When would you NOT: A colleague with whom it works better takes over and does the task.?"
+  }
+ ],
+ "usage": {
+  "calls": 668,
+  "input_tokens": 1182446,
+  "output_tokens": 84055,
+  "est_usd": 2.3928,
+  "credit_budget_usd": 25.0
+ }
+}

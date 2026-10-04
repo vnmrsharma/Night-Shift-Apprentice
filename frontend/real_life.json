@@ -1,0 +1,138 @@
+{
+  "moments": [
+    {
+      "clock": "02:40",
+      "situ": "Night companion refused a continence change. You are the only care assistant on the unit.",
+      "choices": [
+        {
+          "id": "insist",
+          "t": "She's wet, it has to be done now. I'll insist.",
+          "form": {
+            "incident_type": "refusal_of_care",
+            "observation": "Refused the change. I will insist.",
+            "checks": [],
+            "occurrences_today": 1,
+            "intervention": "retry_later_same_carer",
+            "escalate_to": "none",
+            "pattern": "new"
+          }
+        },
+        {
+          "id": "stepback",
+          "t": "Step back. Check pain and toileting, then try again with a colleague and tell the nurse.",
+          "form": {
+            "incident_type": "refusal_of_care",
+            "observation": "Refused the change. Checked comfort and toileting. Colleague will try. Nurse told.",
+            "checks": ["pain", "toileting"],
+            "occurrences_today": 1,
+            "intervention": "swap_carer_or_call_psychologist",
+            "escalate_to": "nurse",
+            "pattern": "new"
+          }
+        }
+      ]
+    },
+    {
+      "clock": "02:50",
+      "situ": "She is restless. A colleague says to give something from the cabinet.",
+      "choices": [
+        {
+          "id": "cabinet",
+          "t": "Give it from the cabinet and write that I did.",
+          "form": {
+            "incident_type": "refusal_of_care",
+            "observation": "Restless. A colleague pointed to the cabinet.",
+            "checks": ["pain"],
+            "occurrences_today": 1,
+            "intervention": "give_prn_medication",
+            "escalate_to": "none",
+            "pattern": "new"
+          }
+        },
+        {
+          "id": "nurse",
+          "t": "Do not give it. Tell the nurse.",
+          "form": {
+            "incident_type": "refusal_of_care",
+            "observation": "Restless. Cabinet suggestion refused. Nurse told.",
+            "checks": ["pain"],
+            "occurrences_today": 1,
+            "intervention": "no_action",
+            "escalate_to": "nurse",
+            "pattern": "new"
+          }
+        }
+      ]
+    },
+    {
+      "clock": "03:00",
+      "situ": "A resident who arrived six days ago is at the unit door in her coat, asking for a taxi.",
+      "choices": [
+        {
+          "id": "refusal",
+          "t": "Log a refusal of care and retry later.",
+          "form": {
+            "incident_type": "exit_seeking",
+            "observation": "At the door asking for a taxi. Arrived six days ago.",
+            "checks": [],
+            "occurrences_today": 2,
+            "months_in_residence": 0,
+            "intervention": "retry_later_same_carer",
+            "escalate_to": "none",
+            "pattern": "new"
+          }
+        },
+        {
+          "id": "integrate",
+          "t": "Log exit-seeking and review her integration plan.",
+          "form": {
+            "incident_type": "exit_seeking",
+            "observation": "At the door asking for a taxi. Arrived six days ago. Walked back, calmer.",
+            "checks": [],
+            "occurrences_today": 2,
+            "months_in_residence": 0,
+            "intervention": "integration_plan_review",
+            "escalate_to": "none",
+            "pattern": "new"
+          }
+        }
+      ]
+    },
+    {
+      "clock": "16:10",
+      "situ": "A resident of eight months is pacing the corridor and trying doors. A colleague calls it sundowning.",
+      "choices": [
+        {
+          "id": "sun",
+          "t": "Record sundowning and ask the physician for something to calm her.",
+          "form": {
+            "incident_type": "wandering",
+            "observation": "Pacing the corridor and trying doors again this afternoon.",
+            "interpretation": "sundowning",
+            "checks": [],
+            "occurrences_today": 1,
+            "months_in_residence": 8,
+            "intervention": "request_antipsychotic",
+            "escalate_to": "none",
+            "pattern": "habitual"
+          }
+        },
+        {
+          "id": "needs",
+          "t": "Check toilet, thirst, glasses and the lighting, then write what you saw.",
+          "form": {
+            "incident_type": "wandering",
+            "observation": "Pacing at the corridor doors. Glasses were in the drawer. Lights were dimmed last week.",
+            "interpretation": "environmental",
+            "checks": ["toileting", "hunger_thirst", "pain", "hearing_vision_aids", "signage_routine"],
+            "occurrences_today": 1,
+            "months_in_residence": 8,
+            "intervention": "restore_signage",
+            "escalate_to": "nurse",
+            "pattern": "habitual"
+          }
+        }
+      ]
+    }
+  ]
+}

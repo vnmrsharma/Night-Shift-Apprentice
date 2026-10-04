@@ -1,0 +1,23 @@
+{
+ "LC-001": {
+  "decision": "confirm",
+  "note": "",
+  "ts": 4.57,
+  "at": "2026-10-04 04:07",
+  "title": "Rule out somatic and basic-needs causes before blaming the disease"
+ },
+ "LC-007": {
+  "decision": "confirm",
+  "note": "",
+  "ts": 33.01,
+  "at": "2026-10-04 04:07",
+  "title": "Document how a refusal was expressed, not just its type"
+ },
+ "LC-086": {
+  "decision": "confirm",
+  "note": "",
+  "ts": 171.53,
+  "at": "2026-10-04 04:13",
+  "title": "Do not use serious-injury falls as an effectiveness indicator"
+ }
+}

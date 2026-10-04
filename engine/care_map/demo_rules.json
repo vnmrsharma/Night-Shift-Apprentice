@@ -1,0 +1,914 @@
+{
+  "version": "demo-rules-1",
+  "note": "Curated from de-identified transcripts. Slot text paraphrases dataset rules; every source cites unit_id, turn id and either a verbatim span ('verbatim') or the dataset's unit summary ('summary'). Guardrail predicates are machine-checkable over sandbox form fields.",
+  "rules": [
+    {
+      "id": "R1-somatic-first",
+      "title": "Rule out body and basic needs before interpreting a refusal",
+      "risk": 3,
+      "triggers": [
+        "checks",
+        "interpretation",
+        "incident_type"
+      ],
+      "slots": {
+        "context": {
+          "text": "Resident refuses or is distressed during care (washing, eating, instructions).",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Run a somatic / basic-needs / sensory check (pain, feet and skin, hunger or thirst, hearing aids, glasses, noise) before choosing a behavioural explanation or intervention.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Unrecognised pain, discomfort, unmet needs and sensory deficits drive behaviour in people who cannot verbalise them; blaming the disease first misses the cause.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not record a behavioural interpretation or a non-physical intervention for a refusal until a pain / physical-discomfort check is logged.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "Pain / physical-discomfort check is not logged for this refusal.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "eq",
+            "value": "refusal_of_care"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "pain"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S13-20",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0354"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0354",
+          "quote_span": "First, clear everything that could be somatic, that could be related to the body, or the basic needs of the body.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S13-20",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0354"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0354",
+          "quote_span": "Maybe that person is just not hearing me.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S03-08",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0072"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S03-T0072",
+          "quote_span": "She's suffering in her feet. She's got edema. She's not wearing her compression stockings.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S13-16",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0335"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0335",
+          "quote_span": "too much noise in the room, pain, etc.",
+          "source_type": "Expert correction of interviewer"
+        }
+      ],
+      "caution": "The ~50% somatic-trigger figure is the expert's recollection, not a cited study.",
+      "literature_query": "pain hearing aids eyeglasses unmet needs underlying causes behavioral symptoms assessment",
+      "applies_to": [
+        "refusal_of_care"
+      ]
+    },
+    {
+      "id": "R2-interaction-first",
+      "title": "Review how care was approached; swap carer or call the psychologist before forcing care",
+      "risk": 2,
+      "triggers": [
+        "intervention",
+        "occurrences_today"
+      ],
+      "slots": {
+        "context": {
+          "text": "Resident refuses with one carer on a given day.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Try a colleague with better rapport, or call the psychologist to de-escalate; document who intervened and what worked.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Rapport and the emotional climate of the interaction drive acceptance; refusals are often caused by how care is delivered.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Never force care through a refusal; retrying unchanged with the same carer repeatedly is not a strategy.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "Psychologist (on call in the morning).",
+          "state": "hypothesized"
+        }
+      },
+      "predicate": {
+        "severity": "warn",
+        "message": "Repeated refusal and the same approach is being retried unchanged.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "eq",
+            "value": "refusal_of_care"
+          },
+          {
+            "field": "intervention",
+            "op": "eq",
+            "value": "retry_later_same_carer"
+          },
+          {
+            "field": "occurrences_today",
+            "op": "gte",
+            "value": 2
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S03-12",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0093"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S03-T0093",
+          "quote_span": "I call in my colleague, and she doesn't get refusal, and the task is done.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S13-16",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0336"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0336",
+          "quote_span": "it's the staff interaction with the residents.",
+          "source_type": "Expert correction of interviewer"
+        }
+      ],
+      "caution": "",
+      "literature_query": "staff communication approach person-centered care triggers behavioral symptoms nonpharmacologic",
+      "applies_to": [
+        "refusal_of_care"
+      ]
+    },
+    {
+      "id": "R3-repeat-escalate",
+      "title": "Repeated refusal goes to the team meeting; route by root cause",
+      "risk": 3,
+      "triggers": [
+        "occurrences_today",
+        "escalate_to"
+      ],
+      "slots": {
+        "context": {
+          "text": "Repeated refusal (for example more than 3 times a day of eating or drinking).",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Bring it to the daily team meeting; the team looks for the root cause (physical, psychological, or both).",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Refusal is a symptom with heterogeneous causes; diagnosis precedes assignment.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not close a repeated refusal alone: it must reach the team meeting. Revise the care plan only if the change is durable.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "Physical cause: care staff (and doctor via nurse). Psychological cause without physical: psychologist, with activity staff.",
+          "state": "hypothesized"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "Refusal has happened 3+ times today but nothing is escalated.",
+        "all": [
+          {
+            "field": "occurrences_today",
+            "op": "gte",
+            "value": 3
+          },
+          {
+            "field": "escalate_to",
+            "op": "eq",
+            "value": "none"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S03-10",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0077"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S03-T0077",
+          "quote_span": "if it's severe enough, it would be brought up in a staff meeting",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S03-10",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0079"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S03-T0079",
+          "quote_span": "Any situation is either linked to your physical problem or a neuropsychological problem.",
+          "source_type": "Expert statement"
+        }
+      ],
+      "caution": "",
+      "literature_query": "interprofessional team review behavioral symptoms care plan",
+      "applies_to": [
+        "refusal_of_care",
+        "wandering"
+      ]
+    },
+    {
+      "id": "R4-treatment-routing",
+      "title": "Carers never change treatment; route via nurse, then coordinating physician",
+      "risk": 3,
+      "triggers": [
+        "intervention",
+        "escalate_to"
+      ],
+      "slots": {
+        "context": {
+          "text": "A medication or treatment change seems needed or is requested (PRN dose, or asking the physician for an antipsychotic).",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Raise it with the nurse; the nurse takes it to the coordinating physician, who speaks to the treating doctor.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Medical authority is distributed: treating doctors prescribe, the coordinating physician orchestrates, the home cannot direct external doctors.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "A carer does not give or change medication on their own judgement; medication changes remain a medical decision.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "Nurse -> coordinating physician -> treating doctor.",
+          "state": "hypothesized"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "Medication is chosen without routing it to a nurse or physician.",
+        "all": [
+          {
+            "field": "intervention",
+            "op": "in",
+            "value": [
+              "give_prn_medication",
+              "request_antipsychotic"
+            ]
+          },
+          {
+            "field": "escalate_to",
+            "op": "not_in",
+            "value": [
+              "nurse",
+              "coordinating_physician"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S10-02",
+          "session": "S10",
+          "turn_ids": [
+            "S10-T0147"
+          ],
+          "kind": "summary",
+          "quote_turn": null,
+          "quote_span": "when nurses raise something, [the coordinating physician] speaks to the treating doctors about adjusting treatment",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S03-01",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0014"
+          ],
+          "kind": "summary",
+          "quote_turn": null,
+          "quote_span": "Medication changes remain a medical decision",
+          "source_type": "Expert correction of interviewer"
+        }
+      ],
+      "caution": "",
+      "literature_query": "medication review antipsychotic physician prescribing nonpharmacologic first"
+    },
+    {
+      "id": "R5-habitual-vs-new",
+      "title": "Say whether the behaviour is new or habitual before escalating",
+      "risk": 2,
+      "triggers": [
+        "pattern",
+        "escalate_to"
+      ],
+      "slots": {
+        "context": {
+          "text": "A behaviour is about to be escalated.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Classify the behaviour as habitual or new first.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Whether a behaviour is new or habitual changes its meaning and urgency.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "warn",
+        "message": "Escalating without saying whether the behaviour is new or habitual.",
+        "all": [
+          {
+            "field": "escalate_to",
+            "op": "not_in",
+            "value": [
+              "none"
+            ]
+          },
+          {
+            "field": "pattern",
+            "op": "in",
+            "value": [
+              "unsure",
+              ""
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S13-18",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0348"
+          ],
+          "kind": "summary",
+          "quote_turn": null,
+          "quote_span": "frequency, whether the behaviour is habitual or not",
+          "source_type": "Expert statement"
+        }
+      ],
+      "caution": "",
+      "literature_query": "change from baseline new onset behavior assessment monitoring frequency"
+    },
+    {
+      "id": "R6-exit-seeking",
+      "title": "Exit-seeking is not refusal: rework integration",
+      "risk": 3,
+      "triggers": [
+        "incident_type",
+        "intervention"
+      ],
+      "slots": {
+        "context": {
+          "text": "Resident tries to leave, mostly in the first weeks after admission.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Review and intensify the integration plan; do not treat it as a refusal.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Exit-seeking expresses disorientation and lack of belonging; it fades with integration.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not file exit-seeking under the refusal pathway or answer it with a refusal strategy.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "A newcomer's exit-seeking is being handled with a refusal strategy instead of an integration review.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "eq",
+            "value": "exit_seeking"
+          },
+          {
+            "field": "intervention",
+            "op": "not_in",
+            "value": [
+              "integration_plan_review"
+            ]
+          },
+          {
+            "field": "months_in_residence",
+            "op": "lt",
+            "value": 3
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S13-17",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0346"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0346",
+          "quote_span": "It's just not the same approach, same strategy at all.",
+          "source_type": "Expert correction of interviewer"
+        },
+        {
+          "unit_id": "KU-S13-17",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0346"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0346",
+          "quote_span": "are very often people who are not sufficiently integrated into their home",
+          "source_type": "Expert correction of interviewer"
+        }
+      ],
+      "caution": "",
+      "literature_query": "wandering exit seeking environment orientation triggers unmet need",
+      "applies_to": [
+        "exit_seeking"
+      ]
+    },
+    {
+      "id": "R7-wandering-basic-needs",
+      "title": "Wandering is a behaviour, not a refusal: rule out body and basic needs first",
+      "risk": 3,
+      "applies_to": [
+        "wandering"
+      ],
+      "triggers": [
+        "checks",
+        "incident_type",
+        "interpretation",
+        "intervention"
+      ],
+      "literature_query": "basic needs toileting hydration hunger pain sensory unmet needs wandering behavioral symptoms",
+      "slots": {
+        "context": {
+          "text": "Resident wanders, paces or tries doors (a behaviour, not a refusal).",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Check body and basic needs (toileting, thirst and hunger, pain, glasses, hearing aids) and read the timing against the daily routine before choosing an explanation.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Unmet needs the person can no longer solve alone drive behaviour; blaming the disease first misses the cause.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not label wandering as the disease (for example sundowning), and do not ask for medication, until body and basic needs have been ruled out.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "No body or basic-needs check is logged for this wandering.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "eq",
+            "value": "wandering"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "toileting"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "hunger_thirst"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "pain"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "hearing_vision_aids"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S05-02",
+          "session": "S05",
+          "turn_ids": [
+            "S05-T0125"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S05-T0125",
+          "quote_span": "wondering is a behavior. And it's not a refusal",
+          "source_type": "Expert correction of interviewer"
+        },
+        {
+          "unit_id": "KU-S13-20",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0354"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0354",
+          "quote_span": "rule that out before saying it's because he's got Alzheimer's.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "MICRO-CASE-WANDERING",
+          "session": "COMPOSITE",
+          "turn_ids": [],
+          "kind": "composite",
+          "quote_turn": null,
+          "quote_span": "An unmet toileting need he can no longer solve because the visual cue is gone",
+          "source_type": "Composite case (startup team, invented details)"
+        },
+        {
+          "unit_id": "MICRO-CASE-WANDERING",
+          "session": "COMPOSITE",
+          "turn_ids": [],
+          "kind": "composite",
+          "quote_turn": null,
+          "quote_span": "Sundowning, so ask for an antipsychotic. Skips the method's first rule: check the body and basic needs before blaming the disease.",
+          "source_type": "Composite case (startup team, invented details)"
+        }
+      ],
+      "caution": "The interviews never mention sundowning or toileting by name; those details come from the composite micro case. The transcript word 'wondering' is the transcription of 'wandering'.",
+      "watch": {
+        "checks": [
+          "toileting",
+          "hunger_thirst",
+          "hearing_vision_aids"
+        ],
+        "intervention": [
+          "prompted_toileting",
+          "restore_signage",
+          "add_activities",
+          "request_antipsychotic"
+        ]
+      }
+    },
+    {
+      "id": "R8-environment-routine",
+      "title": "Check the environment and the routine (signage, lighting, noise, schedule changes) before interpreting behaviour",
+      "risk": 2,
+      "applies_to": [
+        "wandering"
+      ],
+      "triggers": [
+        "checks",
+        "incident_type",
+        "interpretation"
+      ],
+      "literature_query": "environment lighting signage orientation cues routine schedule changes wandering",
+      "slots": {
+        "context": {
+          "text": "A behaviour appears or changes and the environment or routine may have changed.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Check noise, lighting, signage and recent schedule or building changes, and compare the timing of episodes with the daily routine.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "The environment is a primary lever for behaviour and wellbeing.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not conclude a cause before the environment and routine have been checked.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "warn",
+        "message": "Neither the environment nor the routine was checked for this wandering.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "eq",
+            "value": "wandering"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "signage_routine"
+          },
+          {
+            "field": "checks",
+            "op": "not_contains",
+            "value": "noise_environment"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S13-19",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0354"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0354",
+          "quote_span": "the environment is very important",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "MICRO-CASE-WANDERING",
+          "session": "COMPOSITE",
+          "turn_ids": [],
+          "kind": "composite",
+          "quote_turn": null,
+          "quote_span": "Plaques taken down for repainting the same week wandering began",
+          "source_type": "Composite case (startup team, invented details)"
+        }
+      ],
+      "caution": "The removed door plaques and the repainting are details of the composite micro case, not an interview finding.",
+      "watch": {
+        "checks": [
+          "signage_routine",
+          "noise_environment"
+        ],
+        "intervention": [
+          "restore_signage"
+        ]
+      }
+    },
+    {
+      "id": "R9-read-the-narrative",
+      "title": "Read the narrative, not just the coded fields",
+      "risk": 2,
+      "applies_to": [
+        "wandering",
+        "refusal_of_care",
+        "exit_seeking"
+      ],
+      "triggers": [
+        "observation",
+        "incident_type"
+      ],
+      "literature_query": "documentation of behavior narrative observation notes assessment",
+      "slots": {
+        "context": {
+          "text": "A behaviour is documented with a coded category such as 'wandering' or 'hygiene'.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Write what was observed in free text with the time, and read the narrative and timing across entries, not only the coded fields.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Behavioural events need narrative because their meaning lies in context, triggers and timing; separate coded entries can hide the link.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "warn",
+        "message": "No free-text observation was written for this behaviour.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "in",
+            "value": [
+              "wandering",
+              "refusal_of_care",
+              "exit_seeking"
+            ]
+          },
+          {
+            "field": "observation",
+            "op": "eq",
+            "value": ""
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S03-03",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0050"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S03-T0050",
+          "quote_span": "then it would be more. qualitative.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "KU-S03-03",
+          "session": "S03",
+          "turn_ids": [
+            "S03-T0047",
+            "S03-T0048",
+            "S03-T0049",
+            "S03-T0050",
+            "S03-T0051"
+          ],
+          "kind": "summary",
+          "quote_turn": null,
+          "quote_span": "When analysing behaviour, read the narrative, not just coded fields.",
+          "source_type": "Expert statement"
+        },
+        {
+          "unit_id": "MICRO-CASE-WANDERING",
+          "session": "COMPOSITE",
+          "turn_ids": [],
+          "kind": "composite",
+          "quote_turn": null,
+          "quote_span": "The link only appears in the free text and the timing.",
+          "source_type": "Composite case (startup team, invented details)"
+        }
+      ],
+      "caution": ""
+    },
+    {
+      "id": "R10-integration-is-for-newcomers",
+      "title": "Integration review is for newcomers, not for a resident who has lived here for months",
+      "risk": 2,
+      "applies_to": [
+        "wandering",
+        "exit_seeking"
+      ],
+      "triggers": [
+        "intervention",
+        "incident_type"
+      ],
+      "literature_query": "wandering exit seeking newcomers adjustment to the home orientation",
+      "slots": {
+        "context": {
+          "text": "A long-term resident wanders or tries to leave.",
+          "state": "hypothesized"
+        },
+        "action": {
+          "text": "Look for a trigger in body, needs, environment and routine; keep integration work for newcomers in their first weeks.",
+          "state": "hypothesized"
+        },
+        "rationale": {
+          "text": "Exit-seeking early after admission expresses disorientation and lack of belonging; it is not the explanation for a long-term resident.",
+          "state": "hypothesized"
+        },
+        "exceptions": [],
+        "guardrails": [
+          {
+            "text": "Do not rework integration for a resident who has lived in the home for months without first looking for another trigger.",
+            "state": "hypothesized"
+          }
+        ],
+        "escalation": {
+          "text": "",
+          "state": "missing"
+        }
+      },
+      "predicate": {
+        "severity": "block",
+        "message": "An integration review is chosen for a resident who has lived here 3 or more months.",
+        "all": [
+          {
+            "field": "incident_type",
+            "op": "in",
+            "value": [
+              "wandering",
+              "exit_seeking"
+            ]
+          },
+          {
+            "field": "intervention",
+            "op": "eq",
+            "value": "integration_plan_review"
+          },
+          {
+            "field": "months_in_residence",
+            "op": "gte",
+            "value": 3
+          }
+        ]
+      },
+      "sources": [
+        {
+          "unit_id": "KU-S13-17",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0346"
+          ],
+          "kind": "verbatim",
+          "quote_turn": "S13-T0346",
+          "quote_span": "are very often people who are not sufficiently integrated into their home",
+          "source_type": "Expert correction of interviewer"
+        },
+        {
+          "unit_id": "KU-S13-17",
+          "session": "S13",
+          "turn_ids": [
+            "S13-T0336"
+          ],
+          "kind": "summary",
+          "quote_turn": null,
+          "quote_span": "seen mostly in newcomers who are disoriented and don't know where they are; it tends to fade over time",
+          "source_type": "Expert correction of interviewer"
+        },
+        {
+          "unit_id": "MICRO-CASE-WANDERING",
+          "session": "COMPOSITE",
+          "turn_ids": [],
+          "kind": "composite",
+          "quote_turn": null,
+          "quote_span": "That pattern belongs to newcomers in their first weeks; he has lived here two years.",
+          "source_type": "Composite case (startup team, invented details)"
+        }
+      ],
+      "caution": ""
+    }
+  ]
+}

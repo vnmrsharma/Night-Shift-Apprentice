@@ -1,0 +1,164 @@
+{
+  "capture_scenario": {
+    "id": "CAP-WANDERING",
+    "resident": "Mr. D",
+    "title": "Afternoon wandering",
+    "note": "Training case. Document it the way you would on shift.",
+    "task": "The team meeting asks: is this sundowning, and should the physician consider an antipsychotic? What is causing the wandering, and what should happen next?",
+    "record": {
+      "resident": {
+        "name": "Mr. D",
+        "age": 81,
+        "diagnosis": "Alzheimer's, mid-stage",
+        "in_residence": "2 years",
+        "months_in_residence": 24
+      },
+      "entries": [
+        {
+          "when": "Day 1, 16:05",
+          "text": "Walking corridor again, opening doors, agitated. Redirected to lounge.",
+          "code": "wandering"
+        },
+        {
+          "when": "Day 3, 16:40",
+          "text": "Wet trousers, changed. Seemed upset.",
+          "code": "hygiene"
+        },
+        {
+          "when": "Day 6, 15:50",
+          "text": "Pacing east corridor, trying several doors. Calmer after being taken to bathroom.",
+          "code": "wandering"
+        }
+      ],
+      "facility_log": "East corridor repainted. Door plaques removed, to be refitted. (maintenance)",
+      "routine": "Afternoon drinks round at 15:00 daily. Episodes on 14 of the last 14 days, none before that."
+    },
+    "form_start": {
+      "incident_type": "other",
+      "months_in_residence": 24,
+      "occurrences_today": 1
+    }
+  },
+  "teach_cases": [
+    {
+      "id": "T1",
+      "resident": "R-311",
+      "sealed": true,
+      "title": "Distress and refusal during washing",
+      "facts": [
+        "Resident R-311 refused the morning wash for the 4th time today.",
+        "She cried out when her feet were touched; the left foot looks swollen.",
+        "Compression stockings are on the chair, not on her legs."
+      ],
+      "rule_ids": [
+        "R1-somatic-first",
+        "R3-repeat-escalate",
+        "R2-interaction-first"
+      ],
+      "predict": {
+        "question": "What is your next documented step?",
+        "correct": "b",
+        "options": {
+          "a": "Note 'agitation', try again in an hour with the same carer",
+          "b": "Check feet, pain and other physical causes first, then decide who to involve",
+          "c": "Offer a sedative so the wash can go ahead",
+          "d": "Close the incident: it was already documented this morning"
+        }
+      },
+      "form_start": {
+        "incident_type": "refusal_of_care",
+        "occurrences_today": 4
+      }
+    },
+    {
+      "id": "T2",
+      "resident": "R-318",
+      "sealed": true,
+      "title": "Newcomer keeps trying to leave",
+      "facts": [
+        "Resident R-318 arrived 6 days ago.",
+        "Stood at the front door twice this afternoon asking to 'go home'.",
+        "Calmer when walked back to the lounge."
+      ],
+      "rule_ids": [
+        "R6-exit-seeking"
+      ],
+      "predict": {
+        "question": "How should this be handled in the record?",
+        "correct": "c",
+        "options": {
+          "a": "Log it as a refusal of care and retry the task later",
+          "b": "Ask the doctor for a calming medication",
+          "c": "Log it as exit-seeking and review the integration plan",
+          "d": "No action needed, it will pass"
+        }
+      },
+      "form_start": {
+        "incident_type": "exit_seeking",
+        "occurrences_today": 2,
+        "months_in_residence": 0
+      }
+    },
+    {
+      "id": "T3",
+      "resident": "R-322",
+      "sealed": true,
+      "title": "Restless in the evening, extra medication requested",
+      "facts": [
+        "Resident R-322 paced the corridor between 18:00 and 20:00.",
+        "A colleague suggests giving her PRN medication from the cabinet.",
+        "She has not been seen by the nurse today."
+      ],
+      "rule_ids": [
+        "R4-treatment-routing",
+        "R1-somatic-first"
+      ],
+      "predict": {
+        "question": "What would you do about the medication suggestion?",
+        "correct": "d",
+        "options": {
+          "a": "Give the PRN dose and document it",
+          "b": "Give half the dose to be careful",
+          "c": "Wait until the next shift and mention it verbally",
+          "d": "Do not decide it yourself; raise it with the nurse who takes it to the coordinating physician"
+        }
+      },
+      "form_start": {
+        "incident_type": "refusal_of_care",
+        "occurrences_today": 1
+      }
+    },
+    {
+      "id": "T4",
+      "resident": "R-327",
+      "sealed": true,
+      "title": "Afternoon pacing at the corridor doors",
+      "facts": [
+        "Resident R-327 (8 months in residence) has walked the corridor and tried doors most afternoons for 9 days.",
+        "The corridor lights were switched to a dimmer setting last week.",
+        "Her glasses are in the drawer, not on her face.",
+        "A colleague says it is sundowning and suggests asking the physician for something to calm her."
+      ],
+      "rule_ids": [
+        "R7-wandering-basic-needs",
+        "R8-environment-routine",
+        "R10-integration-is-for-newcomers"
+      ],
+      "predict": {
+        "question": "What is your next documented step?",
+        "correct": "b",
+        "options": {
+          "a": "Record it as sundowning and ask the physician for an antipsychotic",
+          "b": "Check body and basic needs (toilet, thirst, glasses, hearing) and the environment (lighting, signage) first, then decide who to involve",
+          "c": "Record it as exit-seeking and review her integration plan",
+          "d": "Add more afternoon activities to keep her busy"
+        }
+      },
+      "form_start": {
+        "incident_type": "wandering",
+        "occurrences_today": 1,
+        "months_in_residence": 8
+      }
+    }
+  ]
+}

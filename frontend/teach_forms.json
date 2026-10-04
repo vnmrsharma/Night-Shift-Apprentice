@@ -1,0 +1,120 @@
+{
+  "T1": {
+    "bad": {
+      "id": "bad",
+      "t": "Note agitation and try the wash again later with the same carer.",
+      "form": {
+        "incident_type": "refusal_of_care",
+        "observation": "Refused the wash and cried out.",
+        "checks": [],
+        "occurrences_today": 4,
+        "intervention": "retry_later_same_carer",
+        "escalate_to": "none",
+        "pattern": "habitual"
+      }
+    },
+    "good": {
+      "id": "good",
+      "t": "Check the swollen foot and pain first, then ask a colleague and bring it to the team.",
+      "form": {
+        "incident_type": "refusal_of_care",
+        "observation": "Cried out when her feet were touched. Left foot swollen. Stockings still on the chair.",
+        "checks": ["pain", "footwear_skin"],
+        "occurrences_today": 4,
+        "intervention": "swap_carer_or_call_psychologist",
+        "escalate_to": "team_meeting",
+        "pattern": "new"
+      }
+    }
+  },
+  "T2": {
+    "bad": {
+      "id": "bad",
+      "t": "Log a refusal of care and retry the task later.",
+      "form": {
+        "incident_type": "exit_seeking",
+        "observation": "At the front door asking to go home.",
+        "checks": [],
+        "occurrences_today": 2,
+        "months_in_residence": 0,
+        "intervention": "retry_later_same_carer",
+        "escalate_to": "none",
+        "pattern": "new"
+      }
+    },
+    "good": {
+      "id": "good",
+      "t": "Log exit-seeking and review her integration plan.",
+      "form": {
+        "incident_type": "exit_seeking",
+        "observation": "Arrived six days ago. At the door twice, calmer when walked to the lounge.",
+        "checks": [],
+        "occurrences_today": 2,
+        "months_in_residence": 0,
+        "intervention": "integration_plan_review",
+        "escalate_to": "none",
+        "pattern": "new"
+      }
+    }
+  },
+  "T3": {
+    "bad": {
+      "id": "bad",
+      "t": "Give the extra dose from the cabinet and write that down.",
+      "form": {
+        "incident_type": "refusal_of_care",
+        "observation": "Paced the corridor this evening. A colleague suggested something from the cabinet.",
+        "checks": ["pain"],
+        "occurrences_today": 1,
+        "intervention": "give_prn_medication",
+        "escalate_to": "none",
+        "pattern": "new"
+      }
+    },
+    "good": {
+      "id": "good",
+      "t": "Do not decide it. Tell the nurse, and note the pain check.",
+      "form": {
+        "incident_type": "refusal_of_care",
+        "observation": "Paced the corridor this evening. Pain checked. Nurse told.",
+        "checks": ["pain"],
+        "occurrences_today": 1,
+        "intervention": "no_action",
+        "escalate_to": "nurse",
+        "pattern": "new"
+      }
+    }
+  },
+  "T4": {
+    "bad": {
+      "id": "bad",
+      "t": "Record sundowning and ask the physician for something to calm her.",
+      "form": {
+        "incident_type": "wandering",
+        "observation": "Walked the corridor and tried doors again this afternoon.",
+        "interpretation": "sundowning",
+        "checks": [],
+        "occurrences_today": 1,
+        "months_in_residence": 8,
+        "intervention": "request_antipsychotic",
+        "escalate_to": "none",
+        "pattern": "habitual"
+      }
+    },
+    "good": {
+      "id": "good",
+      "t": "Check toilet, thirst, glasses and the lighting first, then write what you saw.",
+      "form": {
+        "incident_type": "wandering",
+        "observation": "Pacing at the corridor doors. Glasses were in the drawer. Corridor lights were dimmed last week.",
+        "interpretation": "environmental",
+        "checks": ["toileting", "hunger_thirst", "pain", "hearing_vision_aids", "signage_routine"],
+        "occurrences_today": 1,
+        "months_in_residence": 8,
+        "intervention": "restore_signage",
+        "escalate_to": "nurse",
+        "pattern": "habitual"
+      }
+    }
+  }
+}
