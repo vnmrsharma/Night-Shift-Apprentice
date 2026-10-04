@@ -14,6 +14,37 @@ Document is the capture. The apprentice stays quiet while the record is being fi
 
 Voice, when you turn it on, is an ElevenLabs interviewer or tutor. It only speaks a line the app already wrote. A language model, when a key is set, only reads a free-text answer into the map. Neither one can block a save. The rules do that.
 
+## Architecture
+
+One Python process serves the page and makes every decision. The browser never grades itself.
+
+```mermaid
+flowchart TD
+  page["Browser page<br/>Document, Work map, Practice, Night shift, Results"]
+  api["FastAPI<br/>serves the page and the session API"]
+  session["Session, in memory<br/>events, pause gate, debrief, work map"]
+  guard["Guard<br/>predicates over the care record"]
+  rules["demo_rules.json"]
+  notes["Expert notes<br/>TF-IDF finds a passage"]
+  mastery["Mastery<br/>what to practise next"]
+  voice["ElevenLabs<br/>speaks a line the session already wrote"]
+  model["Language model, optional<br/>turns a free-text answer into a slot"]
+
+  page -->|"each choice is a request"| api
+  api --> session
+  session --> guard
+  rules --> guard
+  notes --> guard
+  guard -->|"block, warn, or save"| page
+  session --> mastery
+  mastery --> page
+  page -.->|"Voice on"| voice
+  voice -.->|"spoken answer"| page
+  session -.-> model
+```
+
+A question waits until the person has paused and a guardrail is still open. The debrief asks what the capture left out, then says the process back. The work map is kept after the expert confirms it. Practice and Night shift send the record through the same guard before anything is saved. Restarting the process clears the session.
+
 ## Run it
 
 You need Python 3.12.
