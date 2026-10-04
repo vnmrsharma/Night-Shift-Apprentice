@@ -16,6 +16,8 @@
     return m.source || m.role || "";
   }
 
+  const API = String(window.APPRENTICE_API || "").replace(/\/$/, "");
+
   async function stop() {
     const current = conv;
     conv = null;
@@ -32,7 +34,7 @@
     if (starting) return starting.then(() => start(nextRole));
     starting = (async () => {
       await stop();
-      const res = await fetch("/voice/session?role=" + nextRole);
+      const res = await fetch(API + "/voice/session?role=" + nextRole);
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.signed_url) throw new Error(data.detail || "Voice is not available");
       await navigator.mediaDevices.getUserMedia({ audio: true });

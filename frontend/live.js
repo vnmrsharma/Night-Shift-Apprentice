@@ -55,9 +55,10 @@
     };
   }
   function newSid() { sid = "ns-" + Math.random().toString(36).slice(2, 10); }
+  const API = String(window.APPRENTICE_API || "").replace(/\/$/, "");
 
   async function api(path, body) {
-    const res = await fetch(path, {
+    const res = await fetch(API + path, {
       method: body ? "POST" : "GET",
       headers: { "content-type": "application/json", "x-session-id": sid },
       body: body ? JSON.stringify(body) : undefined
