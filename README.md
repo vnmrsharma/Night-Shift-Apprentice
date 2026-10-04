@@ -1,6 +1,6 @@
 # Night Shift Apprentice
 
-A training tool for night-shift care staff. It watches how a care record is filled in, asks a short question when a guardrail is relevant, and stops an unsafe record before it is saved.
+A training tool for night-shift dementia care staff. It watches how a care record for dementia patients is filled in, asks a short question when a guardrail is relevant, and stops an unsafe record before it is saved.
 
 It does not diagnose anyone, and it does not decide treatment. A nurse, a physician, or the team still makes those calls.
 
