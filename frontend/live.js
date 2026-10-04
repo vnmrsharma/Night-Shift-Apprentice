@@ -82,8 +82,7 @@
       if (nav) nav.prepend(el);
     }
     el.textContent = text;
-    el.style.borderColor = ok ? "var(--teal)" : "var(--coral)";
-    el.style.color = ok ? "var(--teal)" : "var(--coral)";
+    el.dataset.state = ok ? "ok" : "bad";
   }
 
   function listenReason(reason) {
@@ -149,19 +148,19 @@
     const onMap = $("map") && !$("map").hidden;
     const nightDone = realMoments.length > 0 && realAt >= realMoments.length;
     if (tab === 1) {
-      label.textContent = openQ ? "Answer in the box" : (captureDone ? "Open the debrief" : "Pick a choice");
-      n.textContent = Math.min(captureAt + 1, captureSteps.length || 1) + "/" + (captureSteps.length || 1);
+      label.textContent = openQ ? "Send the answer above" : (captureDone ? "Continue to the debrief" : "Answer the question above");
+      n.textContent = "";
       btn.disabled = !captureDone;
     } else if (tab === 2) {
       n.textContent = "";
       if (mapReady || onMap) {
-        label.textContent = "Continue to Teach";
+        label.textContent = "Continue to practice";
         btn.disabled = false;
       } else if (mapBoot && !debriefStarted) {
         label.textContent = "Opening the debrief";
         btn.disabled = true;
       } else if (!debriefStarted) {
-        label.textContent = answeredCapture ? "Open the debrief" : "Back to Capture";
+        label.textContent = answeredCapture ? "Open the debrief" : "Back to the case";
         btn.disabled = false;
       } else if (teachbackLoading || confirming) {
         label.textContent = teachbackLoading ? "Writing the teach-back" : "Saving the confirmation";
@@ -173,7 +172,7 @@
         label.textContent = "Hear the teach-back";
         btn.disabled = false;
       } else {
-        label.textContent = "Answer the debrief";
+        label.textContent = "Answer above first";
         btn.disabled = true;
       }
     } else if (tab === 3) {
@@ -182,24 +181,24 @@
         label.textContent = "Opening Teach";
         btn.disabled = true;
       } else if (!teachReady) {
-        label.textContent = mapReady ? "Open Teach" : (answeredCapture ? "Back to the map" : "Back to Capture");
+        label.textContent = mapReady ? "Open practice" : (answeredCapture ? "Back to the work map" : "Back to the case");
         btn.disabled = false;
       } else if (pendingNext) {
         label.textContent = "Next case";
         btn.disabled = false;
       } else if (phase === "done") {
-        label.textContent = "Open the night shift";
+        label.textContent = "Continue to the night shift";
         btn.disabled = false;
       } else {
-        label.textContent = "Choose on the card";
+        label.textContent = "Choose an answer above";
         btn.disabled = true;
       }
     } else if (tab === 4) {
-      label.textContent = nightDone ? "See results" : "Choose this moment";
+      label.textContent = nightDone ? "See how this session went" : "Choose a response above";
       n.textContent = realMoments.length ? (Math.min(realAt + 1, realMoments.length) + "/" + realMoments.length) : "";
       btn.disabled = !nightDone;
     } else {
-      label.textContent = "Session results";
+      label.textContent = "This session is complete";
       n.textContent = "";
       btn.disabled = true;
     }
@@ -281,7 +280,6 @@
     box.innerHTML = "";
     const rec = scenario.record || {};
     const who = rec.resident || {};
-    addLine(box, "sys", scenario.title || "Capture", true);
     if (scenario.task) addLine(box, "psy", scenario.task, true);
     if (scenario.note) addLine(box, "ap", scenario.note, true);
     (rec.entries || []).forEach(e => addLine(box, "cg", (e.when ? e.when + " — " : "") + e.text, true));
@@ -291,15 +289,20 @@
     else captureTitle = scenario.title || "";
     if (captureTitle) { $("topic-t").textContent = captureTitle; $("topic-t").title = captureTitle; }
     const hint = box.parentElement && box.parentElement.querySelector(".hint");
-    if (hint) hint.textContent = "Each choice is written into this session.";
+    if (hint) hint.textContent = "Read the case, then answer the question below.";
   }
   function addLine(box, who, text, quiet) {
     const highlight = !quiet && who !== "sys";
     if (highlight) box.querySelectorAll(".msg.live").forEach(m => m.classList.remove("live"));
+    const names = { psy: "Psychologist", exa: "Psychologist", cg: "Care assistant", ap: "AI Apprentice" };
     const m = document.createElement("div");
     m.className = "msg " + (who === "sys" ? "sys" : who) + (highlight ? " live" : "");
-    m.innerHTML = `<p class="orig">${esc(text)}</p>`;
+    const name = names[who] || "";
+    m.innerHTML = name
+      ? `<div class="meta"><b class="who">${name}</b></div><p class="orig">${esc(text)}</p>`
+      : `<p class="orig">${esc(text)}</p>`;
     box.appendChild(m);
+    if (quiet) return;
     const pin = () => { box.scrollTop = box.scrollHeight; };
     pin();
     requestAnimationFrame(pin);
@@ -307,24 +310,24 @@
 
   function showCaptureStep() {
     const host = $("cap-opts");
+    const guide = document.querySelector("#tab1 > section > .hint");
     if (openQ) {
-      host.innerHTML = `<p class="hint">Answer in the box below. The next documentation step waits.</p>`;
+      host.innerHTML = `<p class="hint">Write the answer in your own words.</p>`;
+      if (guide) guide.textContent = "The apprentice asked a question. Answer it below.";
       dock();
       return;
     }
     if (captureAt >= captureSteps.length) {
-      host.innerHTML = `<p class="hint">Capture is on the work map. Open the debrief when you are ready.</p>`;
+      host.innerHTML = `<p class="hint">That is the whole case. Continue to the debrief.</p>`;
+      if (guide) guide.textContent = "The case is documented.";
       document.querySelector('.tab[data-tab="1"]')?.classList.add("done");
       dock();
       return;
     }
     const step = captureSteps[captureAt];
-    host.innerHTML = `<p class="hint" style="font-weight:700;color:var(--ink)">${esc(step.prompt)}</p>` +
+    if (guide) guide.textContent = "Read the case, then answer below. Question " + (captureAt + 1) + " of " + captureSteps.length + ".";
+    host.innerHTML = `<p class="hint">${esc(step.prompt)}</p>` +
       buttons(step.options, "data-cap");
-    const box = $("convo");
-    const pin = () => { box.scrollTop = box.scrollHeight; };
-    pin();
-    requestAnimationFrame(pin);
     dock();
   }
 
@@ -379,7 +382,7 @@
       $("ans").value = "";
       const learned = r.dont_know ? "left unresolved" : `${r.transition.before} → ${r.transition.after}`;
       li($("notes"), `<b>${esc(q.slot)}</b> ${esc(learned)}`);
-      $("ap1-sub").textContent = "Listening";
+      $("ap1-sub").textContent = "Following this case";
       addLine($("convo"), "psy", said);
       showCaptureStep();
     } catch (err) {
@@ -396,7 +399,7 @@
     $("debrief").hidden = false;
     $("map").hidden = true;
     const hint = $("dconvo").parentElement && $("dconvo").parentElement.querySelector(".hint");
-    if (hint) hint.textContent = "Answer each question in the box. Then hear the teach-back and confirm it.";
+    if (hint) hint.textContent = "Explain what you would write. You will hear it back before it is kept.";
     if (!answeredCapture) {
       $("dconvo").innerHTML = "";
       addLine($("dconvo"), "sys", "Answer one question during Capture first. The debrief uses that explanation.");
@@ -611,7 +614,7 @@
     $("j-q").textContent = (current.predict && current.predict.question) || "";
     const opts = (current.predict && current.predict.options) || {};
     $("j-opts").innerHTML = buttons(Object.keys(opts).sort().map(k => ({ id: k, t: opts[k] })), "data-choice");
-    $("j-tutor").innerHTML = '<span class="none-yet">Choose an answer. The work map scores it.</span>';
+    $("j-tutor").innerHTML = '<span class="none-yet">Pick the next documented step. You will see if the record can be saved.</span>';
     $("j-path").innerHTML = "";
     dock();
   }
@@ -905,7 +908,7 @@
     dock();
     try {
       const health = await api("/health");
-      pill(health.ok ? "Connected" : "Degraded", !!health.ok);
+      pill(health.ok ? "Ready" : "Degraded", !!health.ok);
       const opened = await api("/session", { mode: "capture" });
       const scenario = opened.capture_scenario;
       if (scenario && scenario.form_start) form = Object.assign(emptyForm(), scenario.form_start);
@@ -913,9 +916,9 @@
       const obs = ((scenario.record && scenario.record.entries) || []).map(e => e.text).join(" ");
       form.observation = obs.slice(0, 900);
       renderScenario(scenario);
-      placeholder($("notes"), "Notes appear as you document.");
-      placeholder($("qs"), "Questions appear when a guardrail fires.");
-      placeholder($("flags1"), "Nothing to review yet.");
+      placeholder($("notes"), "Nothing written down yet.");
+      placeholder($("qs"), "No question yet.");
+      placeholder($("flags1"), "Nothing to double-check yet.");
       showCaptureStep();
       show(1);
     } catch (err) {
